@@ -3,18 +3,19 @@
 class BDD
 {
     private static $SERVIDOR = "localhost";
-    private static $NAME_BASE = "";
-    private static $NAME_USER = "";
-    private static $PASS = "";
+    private static $NAME_BASE = "gimnasia";
+    private static $NAME_USER = "root";
+    private static $PASS = "password";
     public $conexion;
-    private static function CONECTAR()
+    static public function CONECTAR()
     {
-        $this->conexion = new mysqli(self::$SERVIDOR,self::$NAME_USER,self::$PASS, self::$NAME_BASE) or
-            die(mysql_error());
-        $this->conexion->set_charset("utf8");
-        return $this->conexion;
+        $conexion = new mysqli(self::$SERVIDOR,self::$NAME_USER,self::$PASS, self::$NAME_BASE);
+        if ($conexion->connect_errno) {
+            echo "Fallo al conectar a MySQL: (" . $conexion->connect_errno . ") " . $conexion->connect_error;
+        }
+        return $conexion;
     }
-    private static function CONSULTAR($tabla,$campo,$where = "")
+    static public function CONSULTAR($tabla,$campo,$where = "")
     {
         $mysql = self::CONECTAR();
         if ($tabla || $campo )
@@ -25,9 +26,15 @@ class BDD
         if (!$where) $where = "where $where";
         $sql = "SELECT $campo FROM $tabla$where";
         $res = mysqli_query($mysql,$sql);
-        return mysqli_fetch_object($res);
+        if($res)
+        {
+            return mysqli_fetch_object($res);
+        }else{
+            return false;
+        }
+
     }
-    private static function INSERTAR_DESDE_ARRAY($tabla,$array = array(),$w ="")
+    static public function INSERTAR_DESDE_ARRAY($tabla,$array = array(),$w ="")
     {
         $mysql = self::CONECTAR();
         if ($tabla) return;
