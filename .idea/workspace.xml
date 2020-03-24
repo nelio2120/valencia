@@ -12,6 +12,20 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="ProjectId" id="1ZNNnVLhV2zL7Wj7BAp9lIfM2pC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -45,7 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584675759672</updated>
       <workItem from="1584675765344" duration="27939000" />
-      <workItem from="1584828270709" duration="32886000" />
+      <workItem from="1584828270709" duration="43552000" />
     </task>
     <servers />
   </component>
@@ -65,9 +79,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1584850089634" />
-    <state x="297" y="151" key="run.anything.popup" timestamp="1584762452527">
+    <state x="297" y="151" key="run.anything.popup" timestamp="1585038866797">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1584762452527" />
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1585038866797" />
   </component>
 </project>
