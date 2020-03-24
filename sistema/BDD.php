@@ -43,6 +43,30 @@ class BDD
             }
         }
     }
+    static public function QUERY($read)
+    {
+        $mysql = self::CONECTAR();
+        if (!$read)
+        {
+            return;
+        }
+
+        if(!$res = $mysql->query($read))
+        {
+            echo "consulta: ".$read." \n";
+            echo "Erro en consulta: ".$mysql->errno ." \n";
+            echo "Error: " . $mysql->error . "\n";
+            exit;
+        }else{
+            if ($res->num_rows === 0)
+            {
+                echo "consulta: ".$read." \n";
+                return false;
+            }else{
+                return $resultados = $res->fetch_assoc();
+            }
+        }
+    }
 
     static public function INSERTAR_DESDE_ARRAY($tabla,$array= array(),$w ="")
     {

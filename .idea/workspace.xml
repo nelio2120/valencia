@@ -26,6 +26,13 @@
     <expand />
     <select />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1ZNNnVLhV2zL7Wj7BAp9lIfM2pC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,6 +42,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -59,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584675759672</updated>
       <workItem from="1584675765344" duration="27939000" />
-      <workItem from="1584828270709" duration="43552000" />
+      <workItem from="1584828270709" duration="49670000" />
     </task>
     <servers />
   </component>
@@ -79,6 +87,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1584850089634" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1585077147729">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1585077147729" />
     <state x="297" y="151" key="run.anything.popup" timestamp="1585038866797">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

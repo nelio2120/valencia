@@ -12,6 +12,12 @@ class Ambiente
         $html .= self::CERRAR_HEAD();
         return $html;
     }
+    static public function SCRIPTS_VALIDATOS()
+    {
+        $html = "";
+        $html .= "<script src='../static/validators.js'></script>";
+        return $html;
+    }
     static public function ABRIR_HEAD()
     {
         $html = "";

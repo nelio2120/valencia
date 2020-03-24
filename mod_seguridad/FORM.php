@@ -3,9 +3,11 @@
 
 class FORM
 {
-    static public function FORMULARIO_USUARIO($method="POST",$titulo = "")
+    static public function FORMULARIO_USUARIO($method="POST",$titulo = "",$onsubmit = "",$action = "")
     {
         $html = "";
+        if($onsubmit) $onsubmit = "onsubmit=\"$onsubmit\" ";
+        if($action) $action = "action=\"$action\" ";
         $html .= "
            <div id=\"layoutAuthentication\">
                 <div id=\"layoutAuthentication_content\">
@@ -16,7 +18,7 @@ class FORM
                                     <div class=\"card shadow-lg border-0 rounded-lg mt-5\">
                                         <div class=\"card-header\"><h3 class=\"text-center font-weight-light my-4\">$titulo</h3></div>
                                         <div class=\"card-body\">
-                                            <form method=\"$method\">   
+                                            <form method=\"$method\" $onsubmit $action>   
         ";
         return $html;
     }
@@ -56,17 +58,17 @@ class FORM
         ";
         return $html;
     }
-    static public function GENERAR_SELECT($opciones=array(),$name,$style= "form-control")
+    static public function GENERAR_SELECT($opciones=array(),$name,$label,$style= "form-control")
     {
         $html = "";
         $html .= "
             <div class=\"form-row\">
             <div class=\"col-md-10\">
               <div class=\"form-group\">
-                 <label class=\"small mb-1\" for=\"$name\">$name</label>
+                 <label class=\"small mb-1\" for=\"$name\">$label</label>
                  <select name=\"$name\" id=\"$name\" class=\"$style\" >";
         foreach ($opciones as $k=>$v){
-            $html .= "<option value=\" ".$v['value']." \" > ".$v['valor']." </option>";
+            $html .= "<option value=\" ".$v['id_persona']." \" > ".$v['nombres']." </option>";
         }
         $html .= "
                  </select>
