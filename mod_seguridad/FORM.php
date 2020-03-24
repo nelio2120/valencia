@@ -48,12 +48,12 @@ class FORM
         ";
         return $html;
     }
-    static public function GENERAR_BUTTON_SUBMIT($label,$nombre="",$style= "btn btn-primary btn-block")
+    static public function GENERAR_BUTTON_SUBMIT($label,$nombre="boton_submit",$style= "btn btn-primary btn-block")
     {
         $html = "";
         $html .= "
            <div class=\"form-group mt-4 mb-0\">
-            <button class=\"$style\" type=\"submit\" id=\"$nombre\" href=\"#\" >$label</button>
+            <button class=\"$style\" type=\"submit\" id=\"$nombre\" name=\"$nombre\" href=\"#\" >$label</button>
            </div>
         ";
         return $html;
@@ -68,7 +68,7 @@ class FORM
                  <label class=\"small mb-1\" for=\"$name\">$label</label>
                  <select name=\"$name\" id=\"$name\" class=\"$style\" >";
         foreach ($opciones as $k=>$v){
-            $html .= "<option value=\" ".$v['id_persona']." \" > ".$v['nombres']." </option>";
+            $html .= "<option value=\"".$v['idpersona']."\" > ".$v['nombres']." </option>";
         }
         $html .= "
                  </select>
