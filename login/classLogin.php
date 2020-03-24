@@ -8,12 +8,23 @@ class Login
         $name_user = filter_input(INPUT_POST,"usuario");
         $name_user = trim($name_user);
         $name_user = strtoupper($name_user);
-        $consulta = BDD::CONSULTAR("usuarios","clave","usuario ='$name_user'");
+        $pass = filter_input(INPUT_POST,"pass");
+        $pass = trim($pass);
+        $consulta = BDD::CONSULTAR("usuario","clave","usuario ='$name_user'");
         if($consulta)
         {
-            return print "<script>window.location='../startbootstrap-sb-admin-gh-pages/index.html'</script>";
+            if($consulta['clave'] == $pass)
+            {
+                session_start();
+                $_SESSION['usuario'] = $name_user;
+               return print "<script>window.location='../mod_menu/menu_desktop.php'</script>";
+            }
+            else
+            {
+                return print "<script> alert('Contraseña incorrecta'); </script>";
+            }
         }else{
-            return print "<script> alert('tu huevada no vale'); </script>";
+            return print "<script> alert('Error al consultar'); </script>";
         }
     }
 }

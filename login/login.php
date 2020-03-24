@@ -17,10 +17,11 @@ if (isset($_POST['inputLogin'])) Login::VALIDAR_USUARIO();
                             <div class="card-body">
                                 <form method="post">
                                     <div class="form-group"><label class="small mb-1" for="usuario">Nombre de Usuario</label>
-                                        <input class="form-control py-4" id="usuario" type="text" placeholder="Ingrese su Usuario" />
+                                        <input class="form-control py-4" id="usuario" name="usuario" type="text" placeholder="Ingrese su Usuario" />
                                     </div>
                                     <div class="form-group"><label class="small mb-1" for="inputPassword">Password</label>
-                                        <input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" />
+                                        <input class="form-control py-4" id="pass"
+                                               name="pass" type="password" placeholder="Enter password" />
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">

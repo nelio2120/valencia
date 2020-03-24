@@ -18,23 +18,33 @@ class BDD
     static public function CONSULTAR($tabla,$campo,$where = "")
     {
         $mysql = self::CONECTAR();
-        if ($tabla || $campo )
+        if (!$tabla || !$campo )
         {
             return;
         }
         $sql = "";
-        if (!$where) $where = "where $where";
-        $sql = "SELECT $campo FROM $tabla$where";
-        $res = mysqli_query($mysql,$sql);
-        if($res)
-        {
-            return mysqli_fetch_object($res);
-        }else{
-            return false;
-        }
+        if ($where) $where = "where $where";
 
+        $sql .= "SELECT $campo FROM $tabla $where ;";
+
+        if(!$res = $mysql->query($sql))
+        {
+            echo "consulta: ".$sql." \n";
+            echo "Erro en consulta: ".$mysql->errno ." \n";
+            echo "Error: " . $mysql->error . "\n";
+            exit;
+        }else{
+            if ($res->num_rows === 0)
+            {
+                echo "consulta: ".$sql." \n";
+                return false;
+            }else{
+                return $resultados = $res->fetch_assoc();
+            }
+        }
     }
-    static public function INSERTAR_DESDE_ARRAY($tabla,$array = array(),$w ="")
+
+    static public function INSERTAR_DESDE_ARRAY($tabla,$array= array(),$w ="")
     {
         $mysql = self::CONECTAR();
         if ($tabla) return;
@@ -65,6 +75,7 @@ class BDD
             return false;
         }
     }
+
     static public function ELIMINAR_DATOS($tabla,$w)
     {
         $mysql = self::CONECTAR();
@@ -80,6 +91,7 @@ class BDD
             return false;
         }
     }
+
     static public function ACTUALIZAR_DESDE_ARRAY($tabla,$campos,$w)
     {
         $mysql = self::CONECTAR();
