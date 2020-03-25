@@ -15,7 +15,7 @@ print FORM::GENERAR_INPUT_USUARIO("Usuario","","Ingrese su usuario","text","form
 print FORM::GENERAR_INPUT_USUARIO("Clave","","Ingrese su password","password","form-control py-4");
 print FORM::GENERAR_INPUT_USUARIO("Confirmar","","Repita su Clave","password","form-control py-4");
 //ASI SE GENERAN SELECT
-$array[] = BDD::QUERY("select usuario.idpersona,concat(persona.nombre,' ',persona.apellido) as nombres from usuario 
+$array[] = BDD::QUERY("select usuario.idpersona as id ,concat(persona.nombre,' ',persona.apellido) as nombres from usuario 
 inner join persona on usuario.idpersona = persona.id_persona");
 print FORM::GENERAR_SELECT($array,"select","Persona");
 //ASI SE GENERAN BUTTONS

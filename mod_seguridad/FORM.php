@@ -68,8 +68,28 @@ class FORM
                  <label class=\"small mb-1\" for=\"$name\">$label</label>
                  <select name=\"$name\" id=\"$name\" class=\"$style\" >";
         foreach ($opciones as $k=>$v){
-            $html .= "<option value=\"".$v['idpersona']."\" > ".$v['nombres']." </option>";
+            $html .= "<option value=\"".$v['id']."\" > ".$v['nombres']." </option>";
         }
+        $html .= "
+                 </select>
+              </div>
+            </div>
+          </div>
+        ";
+        return $html;
+    }
+    static public function GENERAR_SELECT_ACTIVO($style= "form-control")
+    {
+        $html = "";
+        $html .= "
+            <div class=\"form-row\">
+            <div class=\"col-md-10\">
+              <div class=\"form-group\">
+                 <label class=\"small mb-1\" for=\"activo\">Activo</label>
+                 <select name=\"activo\" id=\"activo\" class=\"$style\" >
+                    <option value=\"ACTIVO\">ACTIVO</option>
+                    <option value=\"INACTIVO\">INACTIVO</option>
+                    ";
         $html .= "
                  </select>
               </div>
