@@ -67,8 +67,8 @@ class FORM
               <div class=\"form-group\">
                  <label class=\"small mb-1\" for=\"$name\">$label</label>
                  <select name=\"$name\" id=\"$name\" class=\"$style\" >";
-        foreach ($opciones as $k=>$v){
-            $html .= "<option value=\"".$v['id']."\" > ".$v['nombres']." </option>";
+        foreach ($opciones as $key=>$value){
+            $html .= "<option value=\"".$value['id']."\" > ".$value['nombres']." </option>";
         }
         $html .= "
                  </select>
@@ -85,7 +85,7 @@ class FORM
             <div class=\"form-row\">
             <div class=\"col-md-10\">
               <div class=\"form-group\">
-                 <label class=\"small mb-1\" for=\"activo\">Activo</label>
+                 <label class=\"small mb-1\" for=\"activo\">Estado</label>
                  <select name=\"activo\" id=\"activo\" class=\"$style\" >
                     <option value=\"ACTIVO\">ACTIVO</option>
                     <option value=\"INACTIVO\">INACTIVO</option>

@@ -43,7 +43,7 @@ class BDD
             }
         }
     }
-    static public function QUERY($read)
+    static public function  QUERY($read)
     {
         $mysql = self::CONECTAR();
         if (!$read)
@@ -63,7 +63,12 @@ class BDD
                 echo "consulta: ".$read." \n";
                 return false;
             }else{
-                return $resultados = $res->fetch_assoc();
+                $regs = array();
+                while($row = $res->fetch_assoc())
+                {
+                    $regs[] = array_change_key_case($row, CASE_LOWER);
+                }
+                return $regs;
             }
         }
     }
