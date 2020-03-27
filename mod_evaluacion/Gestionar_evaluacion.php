@@ -36,7 +36,7 @@ print FORM_MD::ABRIR_FORMULARIO_MD("home","Datos Generales","show active");
 // campos del formulario
 $array = BDD::QUERY("select e.id_persona as id, concat(p.nombre,' ',p.apellido) as nombres from estudiante as e 
 inner join persona as p on p.id_persona = e.id_persona;");
-print FORM::GENERAR_SELECT($array,"persona","Persona");
+print FORM::GENERAR_SELECT($array,"estudiante","Estudiante");
 print FORM::GENERAR_INPUT_USUARIO("fecha","","","date");
 // cerrar campos del formulario
 
