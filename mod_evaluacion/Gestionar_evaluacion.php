@@ -20,6 +20,7 @@ print "<script>
         method: \"post\",
         success: function (data) {
             $(\"#\"+id+\"\").append(data);
+                        
         }
     });
 }
@@ -37,7 +38,7 @@ print FORM_MD::ABRIR_FORMULARIO_MD("home","Datos Generales","show active");
 $array = BDD::QUERY("select e.id_persona as id, concat(p.nombre,' ',p.apellido) as nombres from estudiante as e 
 inner join persona as p on p.id_persona = e.id_persona;");
 print FORM::GENERAR_SELECT($array,"estudiante","Estudiante");
-print FORM::GENERAR_INPUT_USUARIO("fecha","","","date");
+print FORM::GENERAR_INPUT_USUARIO("fecha","","","date","Fecha");
 // cerrar campos del formulario
 
 print FORM_MD::CERRAR_FOMULARIO_MD();
