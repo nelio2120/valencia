@@ -2,18 +2,17 @@
 require ('../template/ambiente.php');
 require ('../mod_seguridad/FORM.php');
 require ('../sistema/BDD.php');
+require ('../core/classCategoria.php');
 
-
+if(isset($_POST['boton_submit']))  classCategoria::INSERTAR_CATEGORIA();
 
 print Ambiente::ENCABEZADO();
 print Ambiente::ABRIR_BODY('bg-primary');
-print FORM::FORMULARIO_USUARIO("POST","Crear Entrenador");
+print FORM::FORMULARIO_USUARIO("POST","Crear Categoria");
 
-$array = BDD::QUERY("select persona.id_persona,concat(persona.nombre,' ',persona.apellido) as nombres from persona");
-print FORM::GENERAR_SELECT($array,"select","Persona");
+print FORM::GENERAR_INPUT_USUARIO("descrpcion","","Ingrese la descripcion de categoria","text","Descripcion");
 print FORM::GENERAR_BUTTON_SUBMIT("Crear Entrenador");
 
 print FORM::CERRAR_FORMULARIO();
 print FORM::OBTENER_FOOTER_HTML();
 print Ambiente::OBTENER_ETIQUETAS_HEAD();
-?>

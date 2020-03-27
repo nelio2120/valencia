@@ -1,11 +1,9 @@
 <?php
 
 
-class classUsuario
+class classPersona
 {
     static public function INSERTAR_USUARIO(){
-
-
         $name_user = filter_input(INPUT_POST,"Usuario");
         $name_clave = filter_input(INPUT_POST,"Clave");
         $name_Confirmar = filter_input(INPUT_POST,"Confirmar");
@@ -24,6 +22,6 @@ class classUsuario
         }else{
             print "<script>alert('Deben coincidir la clave con su confirmacion clave : $name_clave confirmar: $name_Confirmar');</script>";
         }
-
     }
+    
 }
