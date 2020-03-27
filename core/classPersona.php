@@ -23,5 +23,5 @@ class classPersona
             print "<script>alert('Deben coincidir la clave con su confirmacion clave : $name_clave confirmar: $name_Confirmar');</script>";
         }
     }
-    
+
 }

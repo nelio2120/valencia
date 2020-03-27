@@ -133,8 +133,8 @@ class BDD
     static public function ACTUALIZAR_DESDE_ARRAY($tabla,$campos,$w)
     {
         $mysql = self::CONECTAR();
-        if ($tabla) return false;
-        if ($w) return false;
+        if (!$tabla) return false;
+        if (!$w) return false;
         else $w = "where $w";
         $strFlds = "";
         $delim = "";
@@ -148,6 +148,9 @@ class BDD
         if ($res){
             return true;
         }else{
+            echo "Erro en consulta: ".$mysql->errno ." \n";
+            echo "Error: " . $mysql->error . "\n";
+            echo "update $q \n";
             return false;
         }
     }

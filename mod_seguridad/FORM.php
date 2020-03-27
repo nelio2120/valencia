@@ -51,7 +51,7 @@ class FORM {
             <div class=\"col-md-10\">
               <div class=\"form-group\">
                  <label class=\"small mb-1\" for=\"$nombre\">$label</label>
-                 <input class=\"$style\" id=\"$nombre\" name=\"$nombre\" type=\"$tipo\" placeholder=\"$placeholder\" />
+                 <input class=\"$style\" id=\"$nombre\" value=\"$valor\" name=\"$nombre\" type=\"$tipo\" placeholder=\"$placeholder\" />
               </div>
             </div>
           </div>
@@ -68,7 +68,7 @@ class FORM {
         ";
         return $html;
     }
-    static public function GENERAR_SELECT($opciones=array(),$name,$label,$style= "form-control")
+    static public function GENERAR_SELECT($opciones=array(),$name,$label,$select="",$style= "form-control")
     {
         $html = "";
         $html .= "
@@ -77,8 +77,10 @@ class FORM {
               <div class=\"form-group\">
                  <label class=\"small mb-1\" for=\"$name\">$label</label>
                  <select name=\"$name\" id=\"$name\" class=\"$style\" >";
+        $selected = "";
         foreach ($opciones as $key=>$value){
-            $html .= "<option value=\"".$value['id']."\" > ".$value['nombres']." </option>";
+            if($select == $value['id']) $selected = "selected";
+            $html .= "<option value=\"".$value['id']."\" $selected > ".$value['nombres']." </option>";
         }
         $html .= "
                  </select>
