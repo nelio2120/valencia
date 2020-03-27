@@ -39,7 +39,12 @@ class BDD
                 echo "consulta: ".$sql." \n";
                 return false;
             }else{
-                return $resultados = $res->fetch_assoc();
+                $regs = array();
+                while($row = $res->fetch_assoc())
+                {
+                    $regs[] = array_change_key_case($row, CASE_LOWER);
+                }
+                return $regs;
             }
         }
     }
@@ -60,8 +65,8 @@ class BDD
         }else{
             if ($res->num_rows === 0)
             {
-                echo "consulta: ".$read." \n";
-                return false;
+                $regs = array();
+                return $regs;
             }else{
                 $regs = array();
                 while($row = $res->fetch_assoc())

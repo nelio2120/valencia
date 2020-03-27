@@ -30,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -40,6 +41,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -67,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584675759672</updated>
       <workItem from="1584675765344" duration="27939000" />
-      <workItem from="1584828270709" duration="60552000" />
+      <workItem from="1584828270709" duration="101989000" />
     </task>
     <servers />
   </component>
@@ -79,21 +81,25 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1584760080416" />
-    <state x="440" y="155" key="NewPhpClassDialog" timestamp="1585092981668">
+    <state x="440" y="155" key="NewPhpClassDialog" timestamp="1585188968949">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="440" y="155" key="NewPhpClassDialog/0.0.1280.680@0.0.1280.680" timestamp="1585092981668" />
-    <state x="477" y="264" key="NewPhpFileDialog" timestamp="1584850089634">
+    <state x="440" y="155" key="NewPhpClassDialog/0.0.1280.680@0.0.1280.680" timestamp="1585188968949" />
+    <state x="477" y="264" key="NewPhpFileDialog" timestamp="1585252983531">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1584850089634" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1585077147729">
+    <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1585252983531" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1585114595893">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1585077147729" />
-    <state x="297" y="151" key="run.anything.popup" timestamp="1585096098875">
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1585114595893" />
+    <state x="297" y="151" key="run.anything.popup" timestamp="1585201702518">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1585096098875" />
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1585201702518" />
+    <state x="303" y="1" key="search.everywhere.popup" timestamp="1585165243228">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1585165243228" />
   </component>
 </project>

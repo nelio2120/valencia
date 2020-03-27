@@ -9,7 +9,7 @@ print FORM::FORMULARIO_USUARIO("POST","Crear Ejercicio");
 
 
 
-$array2[] = BDD::QUERY("select nivel.id_nivel,concat(nivel.nombre,' ',nivel.rango) as nombres from nivel");
+$array2 = BDD::QUERY("select id_nivel as id,concat(nombre,' ',rango) as nombres from nivel");
 print FORM::GENERAR_SELECT($array2,"select","Nivel");
 
 print FORM::GENERAR_INPUT_USUARIO("Nombre","","Ingrese su cedula","text","form-control py-4");

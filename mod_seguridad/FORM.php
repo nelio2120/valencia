@@ -1,8 +1,8 @@
 <?php
 
 
-class FORM
-{
+class FORM {
+
     static public function FORMULARIO_USUARIO($method="POST",$titulo = "",$onsubmit = "",$action = "")
     {
         $html = "";
@@ -15,10 +15,20 @@ class FORM
                         <div class=\"container\">
                             <div class=\"row justify-content-center\">
                                 <div class=\"col-lg-7\">
-                                    <div class=\"card shadow-lg border-0 rounded-lg mt-5\">
-                                        <div class=\"card-header\"><h3 class=\"text-center font-weight-light my-4\">$titulo</h3></div>
-                                        <div class=\"card-body\">
-                                            <form method=\"$method\" $onsubmit $action>   
+                                    <div class=\"card shadow-lg border-0 rounded-lg mt-5\">                                       
+        ";
+        $html .= self::CREAR_FORMULARIO_CARD($method,$titulo,$onsubmit,$action);
+        return $html;
+    }
+    static public function CREAR_FORMULARIO_CARD($method,$titulo,$onsubmit,$action)
+    {
+        $html = "";
+        $html .= "
+                 <div class=\"card-header\">
+                    <h3 class=\"text-center font-weight-light my-4\">$titulo</h3>
+                 </div>
+                 <div class=\"card-body\">
+                    <form method=\"$method\" $onsubmit $action>  
         ";
         return $html;
     }
