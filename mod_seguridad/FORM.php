@@ -43,14 +43,14 @@ class FORM {
                 </main><br>
             </div>";
     }
-    static public function GENERAR_INPUT_USUARIO($nombre,$valor= "",$placeholder,$tipo,$style= "form-control py-4")
+    static public function GENERAR_INPUT_USUARIO($nombre,$valor= "",$placeholder,$tipo,$label="",$style= "form-control py-4")
     {
         $html = "";
         $html .= "
           <div class=\"form-row\">
             <div class=\"col-md-10\">
               <div class=\"form-group\">
-                 <label class=\"small mb-1\" for=\"$nombre\">$nombre</label>
+                 <label class=\"small mb-1\" for=\"$nombre\">$label</label>
                  <input class=\"$style\" id=\"$nombre\" type=\"$tipo\" placeholder=\"$placeholder\" />
               </div>
             </div>

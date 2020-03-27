@@ -3,13 +3,28 @@ require ('../template/ambiente.php');
 require ('../mod_seguridad/FORM.php');
 require ('../sistema/BDD.php');
 require ('../mod_seguridad/classFORM_MD.php');
-
+require ('../mod_seguridad/classDATATABLE.php');
 
 if(isset($_POST['boton_submit'])) return print "<script>console.log('LLAMA A NAVARRO')</script>";
 
 
 //Y ESTAS LAS ABREN (OBLIGATORIAS)
 print Ambiente::ENCABEZADO();
+print "<script>
+    function ajax_crear_tr(ejercicio,punto,id) {
+    console.log('si entra');
+    var param = {ejercicio,punto};
+    $.ajax({
+        data: param,
+        url: '../mod_seguridad/crear_tr.php',
+        method: \"post\",
+        success: function (data) {
+            $(\"#\"+id+\"\").append(data);
+        }
+    });
+}
+
+</script>";
 print Ambiente::ABRIR_BODY('bg-primary');
 
 print FORM_MD::ABRIR_MENU_FORMULARIO_MD_CABECERA("home","CABECERA","true");
@@ -30,11 +45,11 @@ print FORM_MD::CERRAR_FOMULARIO_MD();
 // CIERRE FORMULARIO
 
 
-
+// abre el formulario md 2
 print FORM_MD::ABRIR_FORMULARIO_MD("form2","Detalle Cabecera");
-$array_detalle = BDD::QUERY("select id_ejercicio as id,descripcion as nombres from ejercicio;");
-print FORM::GENERAR_SELECT($array_detalle,"ejercicio","Ejercicio");
-print FORM::GENERAR_INPUT_USUARIO("puntos","","Ingrese el puntaje","text");
+$array_cabecera_detalle = array("Ejercicio"=>"select","Puntos"=>"text");
+print DATATABLE::OBTENER_DATATABLE($array_cabecera_detalle,"Agregar Ejercicios","tabla1");
+
 print FORM_MD::CERRAR_FOMULARIO_MD();
 print FORM_MD::CERRAR_FOMULARIO_MD();
 /*

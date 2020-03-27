@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./startbootstrap-sb-admin-gh-pages/dist/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        function agregar_td() {
+            var listArray = [1,2,3,4,5];
+            var listItem = "<tr>";
+            $.each( listArray, function( i, item ) {
+                listItem += "<th><input type='text' name='nelio[]' value='"+item+"'  /></th>";
+            });
+            listItem += "</tr>";
+            $( "#tbody" ).append( listItem );
+            var n = $('input[name="nelio[]"]').length;
+            var contador = 0;
+            for (var cont = 0;cont < n;cont++){
+                console.log($('input[name="nelio[]"]')[cont].value);
+                contador += 1;
+            }
+            console.log(contador);
+        }
+    </script>
+</head>
+<body>
+<div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr align="left">
+                <th>titulo de la tabla</th>
+                <th><button onclick="agregar_td()" class='btn'><i class='fa fa-plus'></i></button></th>
+            </tr>
+            <tr align="left">
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
