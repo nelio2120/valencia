@@ -51,7 +51,7 @@ class FORM {
             <div class=\"col-md-10\">
               <div class=\"form-group\">
                  <label class=\"small mb-1\" for=\"$nombre\">$label</label>
-                 <input class=\"$style\" id=\"$nombre\" type=\"$tipo\" placeholder=\"$placeholder\" />
+                 <input class=\"$style\" id=\"$nombre\" name=\"$nombre\" type=\"$tipo\" placeholder=\"$placeholder\" />
               </div>
             </div>
           </div>

@@ -39,11 +39,7 @@ class BDD
                 echo "consulta: ".$sql." \n";
                 return false;
             }else{
-                $regs = array();
-                while($row = $res->fetch_assoc())
-                {
-                    $regs[] = array_change_key_case($row, CASE_LOWER);
-                }
+                $regs = $res->fetch_assoc();
                 return $regs;
             }
         }
@@ -81,7 +77,7 @@ class BDD
     static public function INSERTAR_DESDE_ARRAY($tabla,$array= array(),$w ="")
     {
         $mysql = self::CONECTAR();
-        if ($tabla) return;
+        if (!$tabla) return;
         if (empty($array))
         {
             return;
@@ -90,7 +86,7 @@ class BDD
         $delim = "";
         foreach ($array as $k => $v)
         {
-            $k=strtoupper($k);
+            $k=strtolower($k);
             $strFlds = $strFlds . $delim . $k;
             $delim = ",";
         }
@@ -98,14 +94,22 @@ class BDD
         $delim = "";
         foreach ($array as $v)
         {
-            $strVals = $strVals . $delim . $v;
+            $strVals = $strVals. $delim . "'".$v."'";
             $delim = ",";
         }
         $q = "INSERT INTO $tabla ($strFlds) VALUES ($strVals)";
         $res = mysqli_query($mysql,$q);
         if ($res){
-            return true;
+            $id = self::CONSULTAR("usuario","max(id_usuario) as id");
+            if($id){
+                return $id['id'];
+            }else{
+                echo "fallo ";
+            }
         }else{
+            echo "Erro en consulta: ".$mysql->errno ." \n";
+            echo "Error: " . $mysql->error . "\n";
+            echo "insert $q \n";
             return false;
         }
     }
