@@ -1,10 +1,5 @@
 <?php
-require ('../template/ambiente.php');
-require ('../mod_seguridad/FORM.php');
-require ('../sistema/BDD.php');
-require ('../mod_seguridad/classFORM_MD.php');
-require ('../mod_seguridad/classDATATABLE.php');
-require ('../core/classUsuario.php');
+require '../../mod_seguridad/ambiente.php';
 if(isset($_POST['boton_submit']))  classUsuario::INSERTAR_USUARIO();
 
 
@@ -29,5 +24,4 @@ print FORM::CERRAR_FORMULARIO();
 print FORM::OBTENER_FOOTER_HTML();
 
 print Ambiente::OBTENER_LOS_SCRIPTS();
-print Ambiente::SCRIPTS_VALIDATOS();
 ?>

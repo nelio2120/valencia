@@ -140,10 +140,10 @@ class BDD
         $delim = "";
         foreach ($campos as $k => $v) {
             $k = strtoupper($k);
+            $strFlds = $strFlds . $delim . $k . " = " ."'". $v."'" ;
             $delim = ",";
-            $strFlds = $strFlds . " SET" . $k . "=" . $v . $delim;
         }
-        $q = "UPDATE $tabla $strFlds $w";
+        $q = "UPDATE $tabla SET $strFlds $w";
         $res = mysqli_query($mysql,$q);
         if ($res){
             return true;

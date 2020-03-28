@@ -1,7 +1,5 @@
 <?php
-require ('../template/ambiente.php');
-require ('../sistema/classMenu.php');
-require ('../login/classLogin.php');
+require "../../mod_seguridad/ambiente.php";
 print Ambiente::ENCABEZADO();
 print Ambiente::ABRIR_BODY("bg-primary");
 if (isset($_POST['inputLogin'])) Login::VALIDAR_USUARIO();

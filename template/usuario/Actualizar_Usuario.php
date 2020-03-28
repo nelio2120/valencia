@@ -1,16 +1,16 @@
 <?php
-require ('../template/ambiente.php');
-require ('../mod_seguridad/FORM.php');
-require ('../sistema/BDD.php');
-require ('../mod_seguridad/classFORM_MD.php');
-require ('../mod_seguridad/classDATATABLE.php');
-require ('../core/classUsuario.php');
+require('../template/ambiente.php');
+require('../mod_seguridad/FORM.php');
+require('../../core/BDD.php');
+require('../mod_seguridad/classFORM_MD.php');
+require('../mod_seguridad/classDATATABLE.php');
+require('../core/classUsuario.php');
 $id = $_GET['id'];
 
-$datos = BDD::CONSULTAR("usuario","id_usuario,usuario,clave,idpersona","id_usuario=$id");
+$datos = BDD::CONSULTAR("usuario","id_usuario,usuario,clave,idpersona","id_usuario=$id and estado = 'ACTIVO'");
 print Ambiente::ENCABEZADO();
 if($datos){
-    if(isset($_POST['boton_submit']))  classUsuario::INSERTAR_USUARIO();
+    if(isset($_POST['boton_submit']))  classUsuario::UPDATE_USUARIO();
 
 
 //Y ESTAS LAS ABREN (OBLIGATORIAS)
@@ -18,7 +18,7 @@ if($datos){
     print Ambiente::ABRIR_BODY('bg-primary');
 
 
-    print FORM::FORMULARIO_USUARIO("POST","Crear Usuario","return validar_usuario();","#");
+    print FORM::FORMULARIO_USUARIO("POST","Actualizar Usuario","return validar_usuario();","#");
 //ASI SE GENERAN INPUTS
     print FORM::GENERAR_INPUT_USUARIO("id",$datos['id_usuario'],"","hidden","");
     print FORM::GENERAR_INPUT_USUARIO("Usuario",$datos['usuario'],"Ingrese su usuario","text","Usuario");

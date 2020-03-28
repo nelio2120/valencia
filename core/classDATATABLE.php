@@ -22,14 +22,14 @@ class DATATABLE{
         return $html;
     }
     static public function OBTENER_TR_INPUT_DETALLE_EJERCICIO($array){
-        $html = "<tr>";
+        $html = "<tr style='padding: 0.5rem;'>";
         foreach ($array as $k=>$value)
         {
             if($value == "select")
             {
                 $array_consulta = BDD::QUERY("select id_ejercicio as id,nombre as nombres from ejercicio");
                 $select = FORM::GENERAR_SELECT($array_consulta,"ejercicio[]","Ejercicio");
-                $html .= "<th>".$select."</th>";
+                $html .= "<th >".$select."</th>";
             }
             if($value == "text"){
                 $html .= "<th>".FORM::GENERAR_INPUT_USUARIO("puntos[]","","Ingrese su puntaje","text","Puntos")."<th>";
@@ -40,7 +40,7 @@ class DATATABLE{
     }
     static public function OBTENER_TR_ENCABEZADO($array)
     {
-        $html = "<tr align=\"left\">";
+        $html = "<tr align=\"cleft\" style=\"height: 30px;\">";
         foreach ($array as $k=>$value)
         {
                 $html .= "<th>$k</th>";

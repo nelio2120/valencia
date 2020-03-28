@@ -48,7 +48,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\VALENCIA\trunk\mod_seguridad" />
+      <recent name="C:\xampp\htdocs\VALENCIA\trunk\template\evaluacion" />
+      <recent name="C:\xampp\htdocs\VALENCIA\trunk" />
+      <recent name="C:\xampp\htdocs\VALENCIA\trunk\template" />
+      <recent name="C:\xampp\htdocs\VALENCIA\trunk\mod_seguridad\funcionesJS" />
+      <recent name="C:\xampp\htdocs\VALENCIA\trunk\core" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -74,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584675759672</updated>
       <workItem from="1584675765344" duration="27939000" />
-      <workItem from="1584828270709" duration="132566000" />
+      <workItem from="1584828270709" duration="149684000" />
     </task>
     <servers />
   </component>
@@ -90,18 +94,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="440" y="155" key="NewPhpClassDialog/0.0.1280.680@0.0.1280.680" timestamp="1585284828410" />
-    <state x="477" y="264" key="NewPhpFileDialog" timestamp="1585336237482">
+    <state x="477" y="264" key="NewPhpFileDialog" timestamp="1585349961871">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1585336237482" />
+    <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1585349961871" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1585114595893">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1585114595893" />
-    <state x="297" y="151" key="run.anything.popup" timestamp="1585293704154">
+    <state x="297" y="151" key="run.anything.popup" timestamp="1585429262763">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1585293704154" />
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1585429262763" />
     <state x="303" y="1" key="search.everywhere.popup" timestamp="1585165243228">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

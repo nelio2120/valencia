@@ -1,7 +1,7 @@
 <?php
-require ('../template/ambiente.php');
-require ('../mod_seguridad/FORM.php');
-require ('../sistema/BDD.php');
+require('../template/ambiente.php');
+require('../mod_seguridad/FORM.php');
+require('../sistema/BDD.php');
 
 
 

@@ -43,15 +43,16 @@ class FORM {
                 </main><br>
             </div>";
     }
-    static public function GENERAR_INPUT_USUARIO($nombre,$valor= "",$placeholder,$tipo,$label="",$style= "form-control py-4")
+    static public function GENERAR_INPUT_USUARIO($nombre,$valor= "",$placeholder,$tipo,$label="",$read_online="",$style= "form-control py-4")
     {
         $html = "";
+        if($read_online) $read_online = "readonly=\"readonly\"";
         $html .= "
           <div class=\"form-row\">
             <div class=\"col-md-10\">
               <div class=\"form-group\">
                  <label class=\"small mb-1\" for=\"$nombre\">$label</label>
-                 <input class=\"$style\" id=\"$nombre\" value=\"$valor\" name=\"$nombre\" type=\"$tipo\" placeholder=\"$placeholder\" />
+                 <input class=\"$style\" id=\"$nombre\" value=\"$valor\" name=\"$nombre\" type=\"$tipo\" $read_online placeholder=\"$placeholder\" />
               </div>
             </div>
           </div>
@@ -66,6 +67,12 @@ class FORM {
             <button class=\"$style\" type=\"submit\" id=\"$nombre\" name=\"$nombre\" href=\"#\" >$label</button>
            </div>
         ";
+        return $html;
+    }
+    static public function GENERAR_BUTTON_SUBMIT_ELIMINAR($label,$nombre="boton_submit",$style= "btn btn-primary btn-block")
+    {
+        $html = "";
+        $html .= "";
         return $html;
     }
     static public function GENERAR_SELECT($opciones=array(),$name,$label,$select="",$style= "form-control")

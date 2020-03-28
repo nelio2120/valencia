@@ -1,8 +1,6 @@
 <?php
-require ('../template/ambiente.php');
-require ('../mod_seguridad/FORM.php');
-require ('../sistema/BDD.php');
-require ('../core/classCategoria.php');
+
+require '../../mod_seguridad/ambiente.php';
 
 if(isset($_POST['boton_submit']))  classCategoria::INSERTAR_CATEGORIA();
 

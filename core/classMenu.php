@@ -32,7 +32,7 @@ class Menu
                                     </a>
                                     <div class=\"collapse\" id=\"pagesCollapseAuth\" aria-labelledby=\"headingOne\" data-parent=\"#sidenavAccordionPages\">
                                         <nav class=\"sb-sidenav-menu-nested nav\">
-                                            <a class=\"nav-link\"  onclick=\"src_iframe('../mod_seguridad/Gestionar_Usuario.php');\">Gestionar Usuario</a>
+                                            <a class=\"nav-link\"  onclick=\"src_iframe('../../template/usuario/Gestionar_usuario.php');\">Gestionar Usuario</a>
                                             <a class=\"nav-link\" href=\"register.html\">Generar Reporte</a>
                                             <a class=\"nav-link\" href=\"password.html\">Forgot Password</a>
                                          </nav>
@@ -46,7 +46,7 @@ class Menu
                             ></a>
                             <div class=\"collapse\" id=\"collapseLayouts\" aria-labelledby=\"headingOne\" data-parent=\"#sidenavAccordion\">
                                 <nav class=\"sb-sidenav-menu-nested nav\">
-                                    <a class=\"nav-link\" onclick=\"src_iframe('../mod_evaluacion/Gestionar_evaluacion.php');\">Generar Evaluacion</a>
+                                    <a class=\"nav-link\" onclick=\"src_iframe('../../template/evaluacion/Gestionar_evaluacion.php');\">Generar Evaluacion</a>
                                 </nav>
                             </div>
                         </div>

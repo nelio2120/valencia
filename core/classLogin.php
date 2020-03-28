@@ -1,6 +1,5 @@
 <?php
 
-require ('../sistema/BDD.php');
 class Login
 {
     static public function VALIDAR_USUARIO()
@@ -17,7 +16,7 @@ class Login
             {
                 session_start();
                 $_SESSION['usuario'] = $name_user;
-               return print "<script>window.location='../mod_menu/menu_desktop.php'</script>";
+               return print "<script>window.location='../menu/menu_desktop.php'</script>";
             }
             else
             {

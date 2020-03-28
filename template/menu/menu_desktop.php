@@ -1,6 +1,5 @@
 <?php
-require ('../template/ambiente.php');
-require ('../sistema/classMenu.php');
+require('../../mod_seguridad/ambiente.php');
 print Ambiente::ENCABEZADO();
 print Ambiente::ABRIR_BODY();
 print Ambiente::NAV_BAR();

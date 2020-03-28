@@ -1,5 +1,5 @@
 <?php
-header('Location: ./login/login.php');
+header('Location: ./template/login/login.php');
 
 
 ?>

@@ -15,7 +15,7 @@ class Ambiente
     static public function SCRIPTS_VALIDATOS()
     {
         $html = "";
-        $html .= "<script src='../static/validators.js'></script>";
+        $html .= "<script src='../../static/validators.js'></script>";
         return $html;
     }
     static public function ABRIR_HEAD()
@@ -40,9 +40,10 @@ class Ambiente
     {
         $html = "";
         $html .= "
-        <script src=\"https://code.jquery.com/jquery-3.4.1.min.js\" crossorigin=\"anonymous\"></script>
+            <script src=\"https://code.jquery.com/jquery-3.4.1.min.js\" crossorigin=\"anonymous\"></script>
         <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js\" crossorigin=\"anonymous\"></script>
-        <script src=\"../startbootstrap-sb-admin-gh-pages/dist/js/scripts.js\"></script>";
+        <script src=\"../../startbootstrap-sb-admin-gh-pages/dist/js/scripts.js\"></script>
+        ";
         return $html;
     }
     static public function OBTENER_ETIQUETAS_HEAD()
@@ -55,10 +56,10 @@ class Ambiente
         <meta name=\"description\" content=\"\" />
         <meta name=\"author\" content=\"NELIO CIGUENCIA\" />
         <title>Sistema de Gimnasa</title>
-        <link href=\"../startbootstrap-sb-admin-gh-pages/dist/css/styles.css\" rel=\"stylesheet\" />
+        <link href=\"../../startbootstrap-sb-admin-gh-pages/dist/css/styles.css\" rel=\"stylesheet\" />
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js\" crossorigin=\"anonymous\"></script>        
         <link href=\"https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css\" rel=\"stylesheet\" crossorigin=\"anonymous\" />                
-        <script src='../static/validators.js'></script>               
+        <script src='../../static/validators.js'></script>               
                 ";
         return $html;
     }
@@ -69,42 +70,7 @@ class Ambiente
     static public function PAGINA_404()
     {
         $html = "";
-        $html .= "
-            <div id=\"layoutError\">
-            <div id=\"layoutError_content\">
-                <main>
-                    <div class=\"container\">
-                        <div class=\"row justify-content-center\">
-                            <div class=\"col-lg-6\">
-                                <div class=\"text-center mt-4\">
-                                    <img class=\"mb-4 img-error\" src=\"../startbootstrap-sb-admin-gh-pages/src/assets/img/error-404-monochrome.svg\" />
-                                    <p class=\"lead\">This requested URL was not found on this server.</p>
-                                    <a href=\"../login/login.php\"><i class=\"fas fa-arrow-left mr-1\"></i>Return to Dashboard</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </main>
-            </div>
-            <div id=\"layoutError_footer\">
-                <footer class=\"py-4 bg-light mt-auto\">
-                    <div class=\"container-fluid\">
-                        <div class=\"d-flex align-items-center justify-content-between small\">
-                            <div class=\"text-muted\">Copyright &copy; Your Website 2019</div>
-                            <div>
-                                <a href=\"#\">Privacy Policy</a>
-                                &middot;
-                                <a href=\"#\">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        </div>
-        <script src=\"https://code.jquery.com/jquery-3.4.1.min.js\" crossorigin=\"anonymous\"></script>
-        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js\" crossorigin=\"anonymous\"></script>
-        <script src=\"../startbootstrap-sb-admin-gh-pages/src/js/scripts.js\"></script>
-        ";
+        $html .= "";
         return $html;
     }
 
@@ -175,7 +141,7 @@ class Ambiente
         $html = "";
         $html .= "
         <iframe id=\"iframe_principal\" class=\"\" 
-        src=\"../startbootstrap-sb-admin-gh-pages/dist/login.html\" 
+        src=\"../../startbootstrap-sb-admin-gh-pages/dist/login.html\" 
         width=\"auto\" frameborder=\"0\" 
         style=\"width:100%; height: 100%;PADDING:0px;MARGIN:0px;\">IFRAME</iframe>
         ";

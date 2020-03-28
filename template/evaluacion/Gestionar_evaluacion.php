@@ -1,33 +1,34 @@
 <?php
-require ('../template/ambiente.php');
-require ('../mod_seguridad/FORM.php');
-require ('../sistema/BDD.php');
-require ('../mod_seguridad/classFORM_MD.php');
-require ('../mod_seguridad/classDATATABLE.php');
+require('../../mod_seguridad/ambiente.php');
+
 
 if(isset($_POST['boton_submit'])) return print "<script>console.log('LLAMA A NAVARRO')</script>";
 
 
 //Y ESTAS LAS ABREN (OBLIGATORIAS)
 print Ambiente::ENCABEZADO();
+print Ambiente::ABRIR_BODY('bg-primary');
+/*
 print "<script>
     function ajax_crear_tr(ejercicio,punto,id) {
-    console.log('si entra');
-    var param = {ejercicio,punto};
+    console.log('si entra: '+$('input[name=\"puntos[]\"]').length);
+    if($('#'+id).length <10){
+       var param = {ejercicio,punto};
     $.ajax({
         data: param,
-        url: '../mod_seguridad/crear_tr.php',
-        method: \"post\",
+        url: './crear_tr.php',
+        method: 'post',
         success: function (data) {
-            $(\"#\"+id+\"\").append(data);
+            $('#'+id).append(data);
                         
         }
-    });
+    });  
+    }
+   
 }
 
 </script>";
-print Ambiente::ABRIR_BODY('bg-primary');
-
+*/
 print FORM_MD::ABRIR_MENU_FORMULARIO_MD_CABECERA("home","CABECERA","true");
 print FORM_MD::AGREGAR_MENU_FORMULARIO("form2","DETALLES",false);
 print FORM_MD::CERRAR_MENU_FORMULARIO_MD_CABECERA();
