@@ -24,7 +24,7 @@ if($datos){
     $array = BDD::QUERY("select id_persona as id ,concat(nombre,' ',apellido) as nombres from persona");
     print FORM::GENERAR_SELECT($array,"select","Persona",$datos['idpersona']);
 //ASI SE GENERAN BUTTONS
-    print FORM::GENERAR_BUTTON_SUBMIT("Crear Usuario");
+    print FORM::GENERAR_BUTTON_SUBMIT_ELIMINAR("Actualizar Usuario");
 
 //ESTAS ETIQUETAS CIERRAN EL FORMULARIO  (OBLIGATORIAS)
     print FORM::CERRAR_FORMULARIO();
