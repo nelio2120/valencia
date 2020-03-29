@@ -72,7 +72,21 @@ class FORM {
     static public function GENERAR_BUTTON_SUBMIT_ELIMINAR($label,$nombre="boton_submit",$style= "btn btn-primary btn-block")
     {
         $html = "";
-        $html .= "";
+        $html .= "
+            
+           <div class=\"form-row\">
+                <div class=\"col-md-6\">
+                    <div class=\"form-group\">
+                         <button class=\"$style\" type=\"submit\" id=\"$nombre\" name=\"$nombre\" href=\"#\" >$label</button>
+                    </div>
+                </div>
+                <div class=\"col-md-6\">
+                    <div class=\"form-group\">
+                        <a class=\"btn btn-danger btn-block\" href=\"../../index.php\" id=\"$nombre\" name=\"$nombre\" href=\"#\" >$label</a>
+                    </div>
+                </div>
+                 </div>
+        ";
         return $html;
     }
     static public function GENERAR_SELECT($opciones=array(),$name,$label,$select="",$style= "form-control")

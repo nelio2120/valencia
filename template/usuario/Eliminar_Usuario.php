@@ -1,10 +1,5 @@
 <?php
-require('../template/ambiente.php');
-require('../mod_seguridad/FORM.php');
-require('../sistema/BDD.php');
-require('../mod_seguridad/classFORM_MD.php');
-require('../mod_seguridad/classDATATABLE.php');
-require('../core/classUsuario.php');
+require '../../mod_seguridad/ambiente.php';
 $id = $_GET['id'];
 
 $datos = BDD::CONSULTAR("usuario","id_usuario,usuario,clave,idpersona","id_usuario=$id and estado = 'ACTIVO'");
@@ -17,7 +12,7 @@ if($datos){
     print Ambiente::ABRIR_BODY('bg-primary');
 
 
-    print FORM::FORMULARIO_USUARIO("POST","Actualizar Usuario","","#");
+    print FORM::FORMULARIO_USUARIO("POST","Eliminar Usuario","","#");
 //ASI SE GENERAN INPUTS
     print FORM::GENERAR_INPUT_USUARIO("id",$datos['id_usuario'],"","hidden","");
     print FORM::GENERAR_INPUT_USUARIO("Usuario",$datos['usuario'],"Ingrese su usuario","text","ESTAS SEGURO DE ELIMINAR ESTE REGISTRO?",true);

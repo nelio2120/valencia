@@ -1,10 +1,6 @@
 <?php
-require('../template/ambiente.php');
-require('../mod_seguridad/FORM.php');
-require('../../core/BDD.php');
-require('../mod_seguridad/classFORM_MD.php');
-require('../mod_seguridad/classDATATABLE.php');
-require('../core/classUsuario.php');
+require '../../mod_seguridad/ambiente.php';
+
 $id = $_GET['id'];
 
 $datos = BDD::CONSULTAR("usuario","id_usuario,usuario,clave,idpersona","id_usuario=$id and estado = 'ACTIVO'");

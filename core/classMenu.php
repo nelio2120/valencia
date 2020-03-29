@@ -54,7 +54,7 @@ class Menu
                     </div>
                     <div class=\"sb-sidenav-footer\">
                         <div class=\"small\">Usuario Logeado en :</div>
-                        Sistema Academico v1.0
+                       Gimnasia Deportiva v1.0
                     </div>
                 </nav>
             </div>

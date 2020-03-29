@@ -29,8 +29,9 @@ print "<script>
 
 </script>";
 */
-print FORM_MD::ABRIR_MENU_FORMULARIO_MD_CABECERA("home","CABECERA","true");
-print FORM_MD::AGREGAR_MENU_FORMULARIO("form2","DETALLES",false);
+print FORM_MD::ABRIR_MENU_FORMULARIO_MD_CABECERA("home","Datos Generales","true");
+print FORM_MD::AGREGAR_MENU_FORMULARIO("form2","Flexibilidad",false);
+print FORM_MD::AGREGAR_MENU_FORMULARIO("form2","Fuerza",false);
 print FORM_MD::CERRAR_MENU_FORMULARIO_MD_CABECERA();
 print FORM_MD::ABRIR_DIV_FORMULARIO_MD();
 // FORMULARIO
@@ -48,7 +49,15 @@ print FORM_MD::CERRAR_FOMULARIO_MD();
 
 
 // abre el formulario md 2
-print FORM_MD::ABRIR_FORMULARIO_MD("form2","Detalle Cabecera");
+print FORM_MD::ABRIR_FORMULARIO_MD("form2","Flexibilidad");
+$array_cabecera_detalle = array("Ejercicio"=>"select","Puntos"=>"text");
+print DATATABLE::OBTENER_DATATABLE($array_cabecera_detalle,"Agregar Ejercicios","tabla1");
+
+print FORM_MD::CERRAR_FOMULARIO_MD();
+print FORM_MD::CERRAR_FOMULARIO_MD();
+
+//tercer formulario #3
+print FORM_MD::ABRIR_FORMULARIO_MD("form2","Fuerza");
 $array_cabecera_detalle = array("Ejercicio"=>"select","Puntos"=>"text");
 print DATATABLE::OBTENER_DATATABLE($array_cabecera_detalle,"Agregar Ejercicios","tabla1");
 

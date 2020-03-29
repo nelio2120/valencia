@@ -7,6 +7,6 @@ require '../../core/classDATATABLE.php';
 require '../../core/classCategoria.php';
 require "../../core/classUsuario.php";
 require "../../core/classLogin.php";
-require "../../core/classMenu.php"
+require "../../core/classMenu.php";
 
 ?>
