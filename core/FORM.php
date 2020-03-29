@@ -82,7 +82,7 @@ class FORM {
                 </div>
                 <div class=\"col-md-6\">
                     <div class=\"form-group\">
-                        <a class=\"btn btn-danger btn-block\" href=\"../../index.php\" id=\"$nombre\" name=\"$nombre\" href=\"#\" >$label</a>
+                        <a class=\"btn btn-danger btn-block\" href=\"../../index.php\" id=\"cancelar\" name=\"cancelar\" >Cancelar</a>
                     </div>
                 </div>
                  </div>
@@ -102,6 +102,7 @@ class FORM {
         foreach ($opciones as $key=>$value){
             if($select == $value['id']) $selected = "selected";
             $html .= "<option value=\"".$value['id']."\" $selected > ".$value['nombres']." </option>";
+            $selected = "";
         }
         $html .= "
                  </select>
