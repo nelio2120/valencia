@@ -117,8 +117,8 @@ class BDD
     static public function ELIMINAR_DATOS($tabla,$w)
     {
         $mysql = self::CONECTAR();
-        if ($tabla) return false;
-        if ($w) return false;
+        if (!$tabla) return false;
+        if (!$w) return false;
         else $w = "where $w";
 
         $q = "DELETE FROM $tabla $w;";
