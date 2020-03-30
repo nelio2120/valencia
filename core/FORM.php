@@ -46,7 +46,7 @@ class FORM {
             </div>";
     }
 
-    static public function GENERAR_INPUT_USUARIO($nombre,$valor= "",$placeholder,$tipo,$label="",$read_online="",$style= "form-control py-4")
+    static public function GENERAR_INPUT_USUARIO($nombre,$valor= "",$placeholder,$tipo,$label="",$read_online="",$condicion ="",$id="",$style= "form-control py-4")
     {
         $html = "";
         if($read_online) $read_online = "readonly=\"readonly\"";
@@ -55,19 +55,19 @@ class FORM {
             <div class=\"col-md-10\">
               <div class=\"form-group\">
                  <label class=\"small mb-1\" for=\"$nombre\">$label</label>
-                 <input class=\"$style\" id=\"$nombre\" value=\"$valor\" name=\"$nombre\" type=\"$tipo\" $read_online placeholder=\"$placeholder\" />
+                 <input class=\"$style\" id=\"$id\" value=\"$valor\" name=\"$nombre\" $condicion type=\"$tipo\" required $read_online placeholder=\"$placeholder\" />
               </div>
             </div>
           </div>
         ";
         return $html;
     }
-    static public function GENERAR_BUTTON_SUBMIT($label,$nombre="boton_submit",$style= "btn btn-primary btn-block")
+    static public function GENERAR_BUTTON_SUBMIT($label,$nombre="boton_submit",$class= "btn btn-primary btn-block",$style="")
     {
         $html = "";
         $html .= "
            <div class=\"form-group mt-4 mb-0\">
-            <button class=\"$style\" type=\"submit\" id=\"$nombre\" name=\"$nombre\" href=\"#\" >$label</button>
+            <button class=\"$class\" style='$style' type=\"submit\" id=\"$nombre\" name=\"$nombre\" href=\"#\" >$label</button>
            </div>
         ";
         return $html;
@@ -85,7 +85,7 @@ class FORM {
                 </div>
                 <div class=\"col-md-6\">
                     <div class=\"form-group\">
-                        <a class=\"btn btn-danger btn-block\" href=\"../../index.php\" id=\"$nombre\" name=\"$nombre\" href=\"#\" >$label</a>
+                        <a class=\"btn btn-danger btn-block\" href=\"../../index.php\" id=\"$nombre\" name=\"$nombre\" href=\"#\" >CANCELAR</a>
                     </div>
                 </div>
                  </div>
@@ -100,7 +100,7 @@ class FORM {
             <div class=\"col-md-10\">
               <div class=\"form-group\">
                  <label class=\"small mb-1\" for=\"$name\">$label</label>
-                 <select name=\"$name\" id=\"$name\" class=\"$style\" >";
+                 <select name=\"$name\" id=\"$name\" class=\"$style\"   >";
         $selected = "";
         foreach ($opciones as $key=>$value){
             if($select == $value['id']) $selected = "selected";

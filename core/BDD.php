@@ -36,7 +36,6 @@ class BDD
         }else{
             if ($res->num_rows === 0)
             {
-                echo "consulta: ".$sql." \n";
                 return false;
             }else{
                 $regs = $res->fetch_assoc();

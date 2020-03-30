@@ -12,7 +12,7 @@ class classNivel
         $name_nombre = strtoupper($name_nombre);
 
         $array = array("nombre"=>$name_nombre,"rango"=>$name_rango);
-        if(BDD::INSERTAR_DESDE_ARRAY("nivel",$array)) return true;
+        if(BDD::INSERTAR_DESDE_ARRAY("nivel",$array)) return print classUsuario::REDIRECCIONAR_ANTERIOR();
         else return print  print "<script>alert('Error al Insertar NIVEL');</script>";
     }
     static public function ACTUALIZAR_NIVEL(){
@@ -24,12 +24,12 @@ class classNivel
         $name_rango = strtoupper($name_rango);
         $name_nombre = strtoupper($name_nombre);
         $array = array("nombre"=>$name_nombre,"rango"=>$name_rango);
-        if(BDD::ACTUALIZAR_DESDE_ARRAY("nivel",$array,"id_nivel=$name_id")) return true;
+        if(BDD::ACTUALIZAR_DESDE_ARRAY("nivel",$array,"id_nivel=$name_id")) return print classUsuario::REDIRECCIONAR_ANTERIOR();
         else return print  print "<script>alert('Error al Actualizar NIVEL');</script>";
     }
     static public function ELIMINAR_NIVEL(){
         $name_id = filter_input(INPUT_POST,"id");
-        if(BDD::ELIMINAR_DATOS("nivel","id_nivel=$name_id")) return true;
+        if(BDD::ELIMINAR_DATOS("nivel","id_nivel=$name_id")) return print classUsuario::REDIRECCIONAR_ANTERIOR();
         else return print  print "<script>alert('Error al ELIMINAR NIVEL');</script>";
     }
 }

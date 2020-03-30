@@ -44,15 +44,23 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/template/categoria" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\VALENCIA\trunk\template\categoria" />
+      <recent name="C:\xampp\htdocs\VALENCIA\trunk\template\ejercicio" />
+      <recent name="C:\xampp\htdocs\VALENCIA\trunk\template\entrenador" />
+      <recent name="C:\xampp\htdocs\VALENCIA\trunk\template\estudiante" />
+      <recent name="C:\xampp\htdocs\VALENCIA\trunk\template\evaluacion" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\VALENCIA\trunk\template\reporte" />
       <recent name="C:\xampp\htdocs\VALENCIA\trunk\template\evaluacion" />
       <recent name="C:\xampp\htdocs\VALENCIA\trunk" />
       <recent name="C:\xampp\htdocs\VALENCIA\trunk\template" />
       <recent name="C:\xampp\htdocs\VALENCIA\trunk\mod_seguridad\funcionesJS" />
-      <recent name="C:\xampp\htdocs\VALENCIA\trunk\core" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -78,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584675759672</updated>
       <workItem from="1584675765344" duration="27939000" />
-      <workItem from="1584828270709" duration="175617000" />
+      <workItem from="1584828270709" duration="216152000" />
     </task>
     <servers />
   </component>
@@ -94,21 +102,21 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="440" y="155" key="NewPhpClassDialog/0.0.1280.680@0.0.1280.680" timestamp="1585463879820" />
-    <state x="477" y="264" key="NewPhpFileDialog" timestamp="1585440473603">
+    <state x="477" y="264" key="NewPhpFileDialog" timestamp="1585599788728">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1585440473603" />
+    <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1585599788728" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1585114595893">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1585114595893" />
-    <state x="297" y="151" key="run.anything.popup" timestamp="1585441928127">
+    <state x="297" y="151" key="run.anything.popup" timestamp="1585556984465">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1585441928127" />
-    <state x="303" y="1" key="search.everywhere.popup" timestamp="1585165243228">
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1585556984465" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1585591353021">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1585165243228" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1585591353021" />
   </component>
 </project>

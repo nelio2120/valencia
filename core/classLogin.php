@@ -9,7 +9,7 @@ class Login
         $name_user = strtoupper($name_user);
         $pass = filter_input(INPUT_POST,"pass");
         $pass = trim($pass);
-        $consulta = BDD::CONSULTAR("usuario","clave","usuario ='$name_user'");
+        $consulta = BDD::CONSULTAR("usuario","clave","usuario ='$name_user' and estado = 'ACTIVO'");
         if($consulta)
         {
             if($consulta['clave'] == $pass)
@@ -23,7 +23,7 @@ class Login
                 return print "<script> alert('Contraseña incorrecta'); </script>";
             }
         }else{
-            return print "<script> alert('Error al consultar'); </script>";
+            return print "<script> alert('Usuario inactivo'); </script>";
         }
     }
 }

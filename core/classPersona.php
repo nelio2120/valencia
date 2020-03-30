@@ -40,7 +40,7 @@ class classPersona
         $array = array("cedula"=>$name_cedula,"nombre"=>$name_Nombre,"apellido"=>$name_apellido,
             "telefono"=>$name_telefono,"correo"=>$name_correo,"direccion"=>$name_direccion,"ciudad"=>$name_ciudad
         ,"fecha_nacimiento"=>$name_fecha,"sexo"=>$name_sexo,"provincia"=>$name_provincia);
-            if(BDD::INSERTAR_DESDE_ARRAY("persona",$array)) true;
+            if(BDD::INSERTAR_DESDE_ARRAY("persona",$array)) return print classUsuario::REDIRECCIONAR_ANTERIOR();
             else print "<script>alert('Error al guardar');</script>";
     }
     static public function ACTUALIZAR_PERSONA(){
@@ -81,7 +81,7 @@ class classPersona
         $array = array("cedula"=>$name_cedula,"nombre"=>$name_Nombre,"apellido"=>$name_apellido,
             "telefono"=>$name_telefono,"correo"=>$name_correo,"direccion"=>$name_direccion,"ciudad"=>$name_ciudad
         ,"fecha_nacimiento"=>$name_fecha,"sexo"=>$name_sexo,"provincia"=>$name_provincia);
-        if(BDD::ACTUALIZAR_DESDE_ARRAY("persona",$array,"id_persona = $name_id")) true;
+        if(BDD::ACTUALIZAR_DESDE_ARRAY("persona",$array,"id_persona = $name_id")) return print classUsuario::REDIRECCIONAR_ANTERIOR();
         else print "<script>alert('Error al Actualizar');</script>";
     }
     static public function ELIMINAR_PERSONA(){

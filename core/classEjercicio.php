@@ -16,7 +16,7 @@ class classEjercicio
         $name_descripcion = strtoupper($name_descripcion);
 
         $array = array("id_nivel"=>$name_nivel,"nombre"=>$name_nombre,"descripcion"=>$name_descripcion,"imagen"=>$name_image);
-        if(BDD::INSERTAR_DESDE_ARRAY("ejercicio",$array)) return true;
+        if(BDD::INSERTAR_DESDE_ARRAY("ejercicio",$array))return print classUsuario::REDIRECCIONAR_ANTERIOR();
         else return print  print "<script>alert('Error al Insertar Ejercicio');</script>";
     }
     static public function ACTUALIZAR_EJERCICIO(){
@@ -32,12 +32,12 @@ class classEjercicio
         $name_nombre = strtoupper($name_nombre);
         $name_descripcion = strtoupper($name_descripcion);
         $array = array("id_nivel"=>$name_nivel,"nombre"=>$name_nombre,"descripcion"=>$name_descripcion,"imagen"=>$name_image);
-        if(BDD::ACTUALIZAR_DESDE_ARRAY("ejercicio",$array,"id_ejercicio=$name_id")) return true;
+        if(BDD::ACTUALIZAR_DESDE_ARRAY("ejercicio",$array,"id_ejercicio=$name_id")) return print classUsuario::REDIRECCIONAR_ANTERIOR();
         else return print  print "<script>alert('Error al Actualizar Ejercicio');</script>";
     }
     static public function ELIMINAR_EJERCICIO(){
         $name_id= filter_input(INPUT_POST,"id");
-        if(BDD::ELIMINAR_DATOS("ejercicio","id_ejercicio=$name_id")) return true;
+        if(BDD::ELIMINAR_DATOS("ejercicio","id_ejercicio=$name_id")) return print classUsuario::REDIRECCIONAR_ANTERIOR();
         else return print  print "<script>alert('Error al Eliminar Ejercicio');</script>";
     }
 

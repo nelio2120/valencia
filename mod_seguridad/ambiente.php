@@ -9,5 +9,6 @@ require "../../core/classUsuario.php";
 require "../../core/classLogin.php";
 require "../../core/classMenu.php";
 require "../../core/classPersona.php";
+require "../../core/classEvaluacion.php";
 
 ?>

@@ -18,11 +18,14 @@ class classUsuario
         $array = array("usuario"=>$name_user,"clave"=>$name_clave,"idpersona"=>$select,"estado"=>"ACTIVO");
         if($name_clave == $name_Confirmar){
             $id = BDD::INSERTAR_DESDE_ARRAY("usuario",$array);
+            return print self::REDIRECCIONAR_ANTERIOR();
         }else{
             print "<script>alert('Deben coincidir la clave con su confirmacion clave : $name_clave confirmar: $name_Confirmar');</script>";
         }
     }
-
+    static public function REDIRECCIONAR_ANTERIOR(){
+       return header('Location: ./index.php');
+    }
     static public function UPDATE_USUARIO(){
         $name_id = filter_input(INPUT_POST,"id");
         $name_user = filter_input(INPUT_POST,"Usuario");
@@ -38,6 +41,7 @@ class classUsuario
         $array = array("usuario"=>$name_user,"clave"=>$name_clave,"idpersona"=>$select,"estado"=>"ACTIVO");
         if($name_clave == $name_Confirmar){
              BDD::ACTUALIZAR_DESDE_ARRAY("usuario",$array,"id_usuario = $name_id");
+            return print self::REDIRECCIONAR_ANTERIOR();
         }else{
             print "<script>alert('Deben coincidir la clave con su confirmacion clave : $name_clave confirmar: $name_Confirmar');</script>";
         }
@@ -54,7 +58,7 @@ class classUsuario
         $select = filter_input(INPUT_POST,"select");
         $array = array("usuario"=>$name_user,"clave"=>$name_clave,"idpersona"=>$select,"estado"=>"INACTIVO");
         if(BDD::ACTUALIZAR_DESDE_ARRAY("usuario",$array,"id_usuario=$name_id")){
-            header('Location: ./login/login.php');
+            return print self::REDIRECCIONAR_ANTERIOR();
         }else{
             print "<script>alert('Error al eliminar usuario');</script>";
         }
