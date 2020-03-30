@@ -14,6 +14,7 @@ class classEjercicio
         $name_nivel = strtoupper($name_nivel);
         $name_nombre = strtoupper($name_nombre);
         $name_descripcion = strtoupper($name_descripcion);
+
         $array = array("id_nivel"=>$name_nivel,"nombre"=>$name_nombre,"descripcion"=>$name_descripcion,"imagen"=>$name_image);
         if(BDD::INSERTAR_DESDE_ARRAY("ejercicio",$array)) return true;
         else return print  print "<script>alert('Error al Insertar Ejercicio');</script>";

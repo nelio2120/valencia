@@ -29,13 +29,15 @@ print "<script>
 
 </script>";
 */
+print "<form method=\"POST\"> ";
 print FORM_MD::ABRIR_MENU_FORMULARIO_MD_CABECERA("home","Datos Generales","true");
 print FORM_MD::AGREGAR_MENU_FORMULARIO("form2","Flexibilidad",false);
 print FORM_MD::AGREGAR_MENU_FORMULARIO("form2","Fuerza",false);
 print FORM_MD::CERRAR_MENU_FORMULARIO_MD_CABECERA();
 print FORM_MD::ABRIR_DIV_FORMULARIO_MD();
 // FORMULARIO
-print FORM_MD::ABRIR_FORMULARIO_MD("home","Datos Generales","show active");
+
+print FORM_MD::ABRIR_FORMULARIO_MD("home","Datos Generales","show active",false);
 // campos del formulario
 $array = BDD::QUERY("select e.id_persona as id, concat(p.nombre,' ',p.apellido) as nombres from estudiante as e 
 inner join persona as p on p.id_persona = e.id_persona;");
@@ -49,7 +51,7 @@ print FORM_MD::CERRAR_FOMULARIO_MD();
 
 
 // abre el formulario md 2
-print FORM_MD::ABRIR_FORMULARIO_MD("form2","Flexibilidad");
+print FORM_MD::ABRIR_FORMULARIO_MD("form2","Flexibilidad","",false);
 $array_cabecera_detalle = array("Ejercicio"=>"select","Puntos"=>"text");
 print DATATABLE::OBTENER_DATATABLE($array_cabecera_detalle,"Agregar Ejercicios","tabla1");
 
@@ -57,12 +59,12 @@ print FORM_MD::CERRAR_FOMULARIO_MD();
 print FORM_MD::CERRAR_FOMULARIO_MD();
 
 //tercer formulario #3
-print FORM_MD::ABRIR_FORMULARIO_MD("form2","Fuerza");
+print FORM_MD::ABRIR_FORMULARIO_MD("form2","Fuerza","",false);
 $array_cabecera_detalle = array("Ejercicio"=>"select","Puntos"=>"text");
 print DATATABLE::OBTENER_DATATABLE($array_cabecera_detalle,"Agregar Ejercicios","tabla1");
 
 print FORM_MD::CERRAR_FOMULARIO_MD();
 print FORM_MD::CERRAR_FOMULARIO_MD();
-
+print "</form> ";
 print Ambiente::OBTENER_LOS_SCRIPTS();
 print Ambiente::SCRIPTS_VALIDATOS();

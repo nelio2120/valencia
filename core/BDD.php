@@ -99,35 +99,9 @@ class BDD
         }
         $q = "INSERT INTO $tabla ($strFlds) VALUES ($strVals)";
         $res = mysqli_query($mysql,$q);
+        $id = mysqli_insert_id();
         if ($res){
-            if($tabla=="usuario"){
-                $id = self::CONSULTAR("$tabla","max(id_usuario) as id");
-                if($id){
-                    return $id['id'];
-                }else{
-                    echo "fallo ";
-                }
-            }
-            if($tabla=="evaluacion_aspirante"){
-                $id = self::CONSULTAR("$tabla","max(id_evaluacion_aspirante) as id");
-                if($id){
-                    return $id['id'];
-                }else{
-                    echo "fallo ";
-                }
-            }
-            if($tabla=="asistencia"){
-                $id = self::CONSULTAR("$tabla","max(idasistencia) as id");
-                if($id){
-                    return $id['id'];
-                }else{
-                    echo "fallo ";
-                }
-            }
-            else{
-                return true;
-            }
-
+          return $id;
         }else{
             echo "Erro en consulta: ".$mysql->errno ." \n";
             echo "Error: " . $mysql->error . "\n";

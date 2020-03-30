@@ -46,12 +46,12 @@ class FORM_MD extends FORM
         ";
         return $html;
     }
-    static public function ABRIR_FORMULARIO_MD($href,$titulo,$active=""){
+    static public function ABRIR_FORMULARIO_MD($href,$titulo,$active="",$form = false){
         $html = "";
         $html .= "
             <div class=\"tab-pane fade $active\" id=\"$href\" role=\"tabpanel\" aria-labelledby=\"$href-tab\">
         ";
-        $html .= FORM::CREAR_FORMULARIO_CARD("POST",$titulo,"","");
+        $html .= FORM::CREAR_FORMULARIO_CARD("POST",$titulo,"","",$form);
         return $html;
     }
     static public function CERRAR_FOMULARIO_MD(){

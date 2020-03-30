@@ -20,20 +20,22 @@ class FORM {
         $html .= self::CREAR_FORMULARIO_CARD($method,$titulo,$onsubmit,$action);
         return $html;
     }
-    static public function CREAR_FORMULARIO_CARD($method,$titulo,$onsubmit,$action)
+    static public function CREAR_FORMULARIO_CARD($method,$titulo,$onsubmit,$action,$noForm = "")
     {
         $html = "";
+        if(!$noForm) $form = "<form method=\"$method\" $onsubmit $action> ";
         $html .= "
                  <div class=\"card-header\">
                     <h3 class=\"text-center font-weight-light my-4\">$titulo</h3>
                  </div>
                  <div class=\"card-body\">
-                    <form method=\"$method\" $onsubmit $action>  
+                   $form
         ";
         return $html;
     }
-    static public function CERRAR_FORMULARIO()
+    static public function CERRAR_FORMULARIO($form = false)
     {
+        if (!$form) $formulario = "</form>";
         return $html = "  </form>
                                     </div>
                                 </div>
@@ -43,6 +45,7 @@ class FORM {
                 </main><br>
             </div>";
     }
+
     static public function GENERAR_INPUT_USUARIO($nombre,$valor= "",$placeholder,$tipo,$label="",$read_online="",$style= "form-control py-4")
     {
         $html = "";
@@ -102,6 +105,7 @@ class FORM {
         foreach ($opciones as $key=>$value){
             if($select == $value['id']) $selected = "selected";
             $html .= "<option value=\"".$value['id']."\" $selected > ".$value['nombres']." </option>";
+            $selected = "";
         }
         $html .= "
                  </select>
