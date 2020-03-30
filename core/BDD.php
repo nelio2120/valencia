@@ -99,7 +99,7 @@ class BDD
         }
         $q = "INSERT INTO $tabla ($strFlds) VALUES ($strVals)";
         $res = mysqli_query($mysql,$q);
-        $id = mysqli_insert_id();
+        $id = mysqli_insert_id($mysql);
         if ($res){
           return $id;
         }else{
