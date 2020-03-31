@@ -7,8 +7,8 @@ print Ambiente::ENCABEZADO();
 print Ambiente::ABRIR_BODY('bg-primary');
 print FORM::FORMULARIO_USUARIO("POST","Crear Entrenador");
 
-$array = BDD::QUERY("select persona.id_persona,concat(persona.nombre,' ',persona.apellido) as nombres from persona");
-print FORM::GENERAR_SELECT($array,"select","Persona");
+$array = BDD::QUERY("select persona.id_persona as id ,concat(persona.nombre,' ',persona.apellido) as nombres from persona");
+print FORM::GENERAR_SELECT($array,"persona","Persona");
 print FORM::GENERAR_BUTTON_SUBMIT("Crear Entrenador");
 
 print FORM::CERRAR_FORMULARIO();

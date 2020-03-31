@@ -16,6 +16,7 @@ if(!isset($_SESSION['usuario'])) {
     require "../../core/classEvaluacion.php";
     require "../../core/classEjercicio.php";
     require "../../core/classRepresentante.php";
+    require "../../core/classEntrenador.php";
 }
 
 
