@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-03-2020 a las 04:15:38
+-- Tiempo de generación: 31-03-2020 a las 10:44:56
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 5.6.40
 
@@ -52,8 +52,8 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`idcategoria`, `descripcion`) VALUES
-(1, 'PESA'),
-(2, 'PRE-SELECCION');
+(1, 'PRE'),
+(3, 'PRE-SELECCION');
 
 -- --------------------------------------------------------
 
@@ -102,7 +102,9 @@ INSERT INTO `detalle_evaluacion` (`iddetalle_evaluacion`, `idejercicio`, `puntos
 (13, 1, '1', 15, 'C'),
 (14, 3, '10', 16, 'F'),
 (15, 1, '10', 16, 'F'),
-(16, 3, '1', 16, 'C');
+(16, 3, '1', 16, 'C'),
+(17, 1, '10', 17, 'F'),
+(18, 1, '10', 17, 'C');
 
 -- --------------------------------------------------------
 
@@ -193,7 +195,8 @@ INSERT INTO `evaluacion_aspirante` (`id_evaluacion_aspirante`, `id_estudiante`, 
 (13, 1, '2000-06-21'),
 (14, 1, '2000-06-21'),
 (15, 1, '2000-06-21'),
-(16, 1, '2000-03-30');
+(16, 1, '2000-03-30'),
+(17, 1, '2000-06-21');
 
 -- --------------------------------------------------------
 
@@ -253,8 +256,8 @@ CREATE TABLE `persona` (
 INSERT INTO `persona` (`id_persona`, `cedula`, `nombre`, `apellido`, `telefono`, `correo`, `direccion`, `ciudad`, `fecha_nacimiento`, `sexo`, `provincia`) VALUES
 (1, '0953865177', 'Nelio Reynaldo', 'Ciguencia Cadena', '3872803', 'neliomarcos040@gmail.com', 'carchi 4619', 'guayaquil', '2000-06-21', 'M', 'Guayas'),
 (2, '0915636195', 'JAIMILTON CEVALLOS', 'KJKJKJK', '3872803', 'LUISARDILAMACIAS@GMAIL.COM', 'CARCHI Y FRANSISCO SEGURA', 'GUAYAQUIL', '2000-07-21', 'M', 'GUAYAS'),
-(3, '0912345678', 'ROBINSON', 'VALENCIA', '1234567', 'xxx@example.com', 'por ahi', 'guayaquil', '2000-06-21', 'M', 'GUAYAS'),
-(4, '0915636195', 'JAIMILTON CEVALLOS', 'CIGUENCIA DOYLET', '098765432', 'NELIOMARCOS@GMAIL.COM', 'POR AHI', 'GUAYAQUIL', '2000-06-21', 'M', 'GUAYAS');
+(3, '098765432', 'ROBINSON CETRE', 'VALENCIA', '1234567', 'XXX@EXAMPLE.COM', '', 'GUAYAQUIL', '2000-06-21', '', 'GUAYAS'),
+(5, '0915636195', 'ROBERT', 'DENILO', '3456765432', 'LUISARDILAMARCIAS@GMAIL.COM', 'CIUDAD', '', '2222-06-21', '', '');
 
 -- --------------------------------------------------------
 
@@ -271,7 +274,8 @@ CREATE TABLE `representante` (
   `correo` varchar(45) NOT NULL,
   `fecha_nacimiento` date NOT NULL,
   `sector` varchar(45) NOT NULL,
-  `direccion` varchar(45) DEFAULT NULL
+  `direccion` varchar(45) DEFAULT NULL,
+  `id_estudiante` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -396,7 +400,8 @@ ALTER TABLE `persona`
 -- Indices de la tabla `representante`
 --
 ALTER TABLE `representante`
-  ADD PRIMARY KEY (`idRepresentante`);
+  ADD PRIMARY KEY (`idRepresentante`),
+  ADD KEY `fk_estudiante_representante_idx` (`id_estudiante`);
 
 --
 -- Indices de la tabla `usuario`
@@ -419,7 +424,7 @@ ALTER TABLE `asistencia`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `idcategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idcategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_asistencia`
@@ -431,7 +436,7 @@ ALTER TABLE `detalle_asistencia`
 -- AUTO_INCREMENT de la tabla `detalle_evaluacion`
 --
 ALTER TABLE `detalle_evaluacion`
-  MODIFY `iddetalle_evaluacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `iddetalle_evaluacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `ejercicio`
@@ -455,7 +460,7 @@ ALTER TABLE `estudiante`
 -- AUTO_INCREMENT de la tabla `evaluacion_aspirante`
 --
 ALTER TABLE `evaluacion_aspirante`
-  MODIFY `id_evaluacion_aspirante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_evaluacion_aspirante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `nivel`
@@ -473,13 +478,13 @@ ALTER TABLE `parametro`
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `id_persona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_persona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `representante`
 --
 ALTER TABLE `representante`
-  MODIFY `idRepresentante` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idRepresentante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -531,6 +536,12 @@ ALTER TABLE `estudiante`
 --
 ALTER TABLE `evaluacion_aspirante`
   ADD CONSTRAINT `fk_estudiante_evaluacion` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiante` (`id_estudiante`);
+
+--
+-- Filtros para la tabla `representante`
+--
+ALTER TABLE `representante`
+  ADD CONSTRAINT `fk_est` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiante` (`id_estudiante`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `usuario`
