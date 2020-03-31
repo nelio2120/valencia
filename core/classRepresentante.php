@@ -12,6 +12,8 @@ class classRepresentante
         $name_fecha = filter_input(INPUT_POST,"fecha_nacimiento");
         $name_sector = filter_input(INPUT_POST,"sector");
         $name_direccion = filter_input(INPUT_POST,"direccion");
+        $estudiante = filter_input(INPUT_POST,"estudiante");
+
 
         $name_nombre = trim($name_nombre);
         $name_apellido = trim($name_apellido);
@@ -32,7 +34,7 @@ class classRepresentante
         $name_direccion = strtoupper($name_direccion);
 
         $array = array("Nombre"=>$name_nombre,"Apellido"=>$name_apellido,"Cedula"=>$name_cedula,"Telefono"=>$name_telefono
-        ,"correo"=>$name_correo,"fecha_nacimiento"=>$name_fecha,"sector"=>$name_sector,"direccion"=>$name_direccion);
+        ,"correo"=>$name_correo,"fecha_nacimiento"=>$name_fecha,"sector"=>$name_sector,"direccion"=>$name_direccion,"id_estudiante"=>$estudiante);
         if(BDD::INSERTAR_DESDE_ARRAY("representante",$array)) return print classUsuario::REDIRECCIONAR_ANTERIOR();
         else return print  print "<script>alert('Error al Insertar Representante');</script>";
     }
@@ -46,6 +48,7 @@ class classRepresentante
         $name_fecha = filter_input(INPUT_POST,"fecha_nacimiento");
         $name_sector = filter_input(INPUT_POST,"sector");
         $name_direccion = filter_input(INPUT_POST,"direccion");
+        $estudiante = filter_input(INPUT_POST,"estudiante");
 
         $name_nombre = trim($name_nombre);
         $name_apellido = trim($name_apellido);
@@ -66,11 +69,11 @@ class classRepresentante
         $name_direccion = strtoupper($name_direccion);
 
         $array = array("Nombre"=>$name_nombre,"Apellido"=>$name_apellido,"Cedula"=>$name_cedula,"Telefono"=>$name_telefono
-        ,"correo"=>$name_correo,"fecha_nacimiento"=>$name_fecha,"sector"=>$name_sector,"direccion"=>$name_direccion);
+        ,"correo"=>$name_correo,"fecha_nacimiento"=>$name_fecha,"sector"=>$name_sector,"direccion"=>$name_direccion,"id_estudiante"=>$estudiante);
         if(BDD::ACTUALIZAR_DESDE_ARRAY("representante",$array,"idRepresentante=$name_id")) return print classUsuario::REDIRECCIONAR_ANTERIOR();
         else return print  print "<script>alert('Error al Actualizar Representante');</script>";
     }
-    static public function ELIMINAR_NIVEL(){
+    static public function ELIMINAR_REPRESENTANTE(){
         $name_id = filter_input(INPUT_POST,"id");
         if(BDD::ELIMINAR_DATOS("representante","idRepresentante=$name_id")) return print classUsuario::REDIRECCIONAR_ANTERIOR();
         else return print  print "<script>alert('Error al ELIMINAR REPRESENTANTE');</script>";

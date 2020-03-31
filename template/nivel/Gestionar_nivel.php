@@ -1,6 +1,8 @@
 <?php
 require '../../mod_seguridad/ambiente.php';
 
+if(isset($_POST['boton_submit']))  classNivel::INSERTAR_NIVEL();
+
 print Ambiente::ENCABEZADO();
 print Ambiente::ABRIR_BODY('bg-primary');
 print FORM::FORMULARIO_USUARIO("POST","Crear Nivel");

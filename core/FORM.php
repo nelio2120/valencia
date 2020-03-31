@@ -85,7 +85,7 @@ class FORM {
                 </div>
                 <div class=\"col-md-6\">
                     <div class=\"form-group\">
-                        <a class=\"btn btn-danger btn-block\" href=\"../../index.php\" id=\"$nombre\" name=\"$nombre\" href=\"#\" >CANCELAR</a>
+                        <a class=\"btn btn-danger btn-block\" href=\"./index.php\" id=\"$nombre\" name=\"$nombre\" href=\"#\" >CANCELAR</a>
                     </div>
                 </div>
                  </div>

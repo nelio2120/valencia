@@ -7,7 +7,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -95,7 +95,9 @@
       <updated>1584675759672</updated>
       <workItem from="1584675765344" duration="27939000" />
       <workItem from="1584828270709" duration="216152000" />
-      <workItem from="1585612838584" duration="2237000" />
+      <workItem from="1585612838584" duration="2677000" />
+      <workItem from="1585615720050" duration="6982000" />
+      <workItem from="1585639813968" duration="4101000" />
     </task>
     <servers />
   </component>
@@ -111,18 +113,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="440" y="155" key="NewPhpClassDialog/0.0.1280.680@0.0.1280.680" timestamp="1585463879820" />
-    <state x="477" y="264" key="NewPhpFileDialog" timestamp="1585599788728">
+    <state x="477" y="264" key="NewPhpFileDialog" timestamp="1585643857770">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1585599788728" />
+    <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1585643857770" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1585114595893">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1585114595893" />
-    <state x="297" y="151" key="run.anything.popup" timestamp="1585556984465">
+    <state x="297" y="151" key="run.anything.popup" timestamp="1585641627453">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1585556984465" />
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1585641627453" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1585591353021">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

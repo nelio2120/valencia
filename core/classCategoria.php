@@ -23,6 +23,6 @@ class classCategoria
     static public function ELIMINAR_CATEGORIA(){
         $name_id = filter_input(INPUT_POST,"id");
         if(BDD::ELIMINAR_DATOS("categoria","idcategoria=$name_id")) return print classUsuario::REDIRECCIONAR_ANTERIOR();
-        else print "<script>alert('Error al eliminar categoria');</script>";
+        else print "<script>alert('Error al eliminar categoria, Verifique si no tiene relaciones');</script>";
     }
 }

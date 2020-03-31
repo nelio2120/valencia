@@ -2,10 +2,10 @@
 require '../../mod_seguridad/ambiente.php';
 $id = $_GET['id'];
 
-$datos = BDD::CONSULTAR("representante","idRepresentante,Nombre,Apellido,Cedula","idRepresentante=$id");
+$datos = BDD::CONSULTAR("representante","idRepresentante,concat(Nombre,' ',Apellido) as nombre","idRepresentante=$id");
 print Ambiente::ENCABEZADO();
 if($datos){
-    if(isset($_POST['boton_submit']))  classUsuario::ELIMINAR_USUARIO();
+    if(isset($_POST['boton_submit']))  classRepresentante::ELIMINAR_REPRESENTANTE();
 
 //Y ESTAS LAS ABREN (OBLIGATORIAS)
     print Ambiente::ENCABEZADO();
@@ -15,10 +15,8 @@ if($datos){
     print FORM::FORMULARIO_USUARIO("POST","Eliminar Usuario","","#");
 //ASI SE GENERAN INPUTS
     print FORM::GENERAR_INPUT_USUARIO("id",$datos['idRepresentante'],"","hidden","");
-    print FORM::GENERAR_INPUT_USUARIO("Nombre",$datos['Nombre'],"Ingrese su usuario","text","ESTAS SEGURO DE ELIMINAR ESTE REGISTRO?",true);
-    print FORM::GENERAR_INPUT_USUARIO("Clave",$datos['Cedula'],"Cedula","hidden","");
+    print FORM::GENERAR_INPUT_USUARIO("nombre",$datos['nombre'],"Ingrese su usuario","text","ESTAS SEGURO DE ELIMINAR ESTE REGISTRO?",true);
 //ASI SE GENERAN SELECT
-    print FORM::GENERAR_INPUT_USUARIO("select",$datos['idestudiante'],"Repita su Clave","hidden","");
 //ASI SE GENERAN BUTTONS
     print FORM::GENERAR_BUTTON_SUBMIT_ELIMINAR("Eliminar Representante");
 

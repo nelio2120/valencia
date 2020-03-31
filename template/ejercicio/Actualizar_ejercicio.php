@@ -7,7 +7,7 @@ $datos = BDD::CONSULTAR("ejercicio","id_ejercicio,id_nivel,nombre,descripcion,im
 
 print Ambiente::ENCABEZADO();
 if($datos){
-    if(isset($_POST['boton_submit']))  classUsuario::UPDATE_USUARIO();
+    if(isset($_POST['boton_submit'])) classEjercicio::ACTUALIZAR_EJERCICIO();
 
 
 //Y ESTAS LAS ABREN (OBLIGATORIAS)
@@ -16,14 +16,15 @@ if($datos){
 
     print FORM::FORMULARIO_USUARIO("POST","Actualizar ejercicio","return validar_usuario();","#");
 
+    print FORM::GENERAR_INPUT_USUARIO("id",$datos['id_ejercicio'],"","hidden","");
     $array2 = BDD::QUERY("select id_nivel as id ,concat(nombre,' ',rango ) as nombres from nivel");
-    print FORM::GENERAR_SELECT($array2,"select","Nivel",$datos['id_nivel']);
+    print FORM::GENERAR_SELECT($array2,"nivel","Nivel",$datos['id_nivel']);
 
-    print FORM::GENERAR_INPUT_USUARIO("Nombre",$datos['nombre'],"Ingrese el nombre del ejercicio","text","Ejercicio");
+    print FORM::GENERAR_INPUT_USUARIO("nombre",$datos['nombre'],"Ingrese el nombre del ejercicio","text","Ejercicio");
 
-    print FORM::GENERAR_INPUT_USUARIO("Descripcion",$datos['descripcion'],"Ingrese la descripcion del ejercicio","text","Descripcion");
+    print FORM::GENERAR_INPUT_USUARIO("descripcion",$datos['descripcion'],"Ingrese la descripcion del ejercicio","text","Descripcion");
 
-    print FORM::GENERAR_INPUT_USUARIO("Imagen",$datos['imagen'],"Ingrese el nombre del ejercicio","text","Imagen del ejercicio");
+    print FORM::GENERAR_INPUT_USUARIO("image",$datos['imagen'],"Ingrese el nombre del ejercicio","hidden","Imagen del ejercicio");
 
     
 

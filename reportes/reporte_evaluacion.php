@@ -10224,14 +10224,15 @@
     $datos = BDD::CONSULTAR("evaluacion_aspirante as e inner join estudiante as est on e.id_estudiante = est.id_estudiante
 inner join persona as p on p.id_persona = est.id_persona inner join nivel as n on n.id_nivel = est.id_nivel","concat(p.nombre,' ',p.apellido) as nombre,p.ciudad
 ,concat(p.fecha_nacimiento,' edad: ',TIMESTAMPDIFF(YEAR, p.fecha_nacimiento, now()),' años') as edad,est.club,e.fecha,n.rango","e.id_evaluacion_aspirante = $id");
-    $flexibilidad = BDD::QUERY("select e.nombre,d.puntos,sum(d.puntos) as total from detalle_evaluacion as d
+    $flexibilidad = BDD::QUERY("select e.nombre,d.puntos from detalle_evaluacion as d
 inner join ejercicio as e on d.idejercicio = e.id_ejercicio
-where idevaluacion_aspirante = $id and d.tipo = 'F'");
-    $fuerza = BDD::QUERY("select e.nombre,d.puntos,sum(d.puntos) as total from detalle_evaluacion as d
+where d.idevaluacion_aspirante = $id and d.tipo = 'F'");
+    $fuerza = BDD::QUERY("select e.nombre,d.puntos from detalle_evaluacion as d
 inner join ejercicio as e on d.idejercicio = e.id_ejercicio
-where idevaluacion_aspirante = $id and d.tipo = 'C'");
-
-?>
+where d.idevaluacion_aspirante = $id and d.tipo = 'C'");
+    $total_flexibilida = BDD::CONSULTAR("detalle_evaluacion","sum(puntos) as puntos","idevaluacion_aspirante=$id and tipo = 'F'");
+    $total_fuerza = BDD::CONSULTAR("detalle_evaluacion","sum(puntos) as puntos","idevaluacion_aspirante=$id and tipo = 'C'");
+    ?>
     <div style="margin-left: 20px;margin-top: 20px;">
        <h1 align="left">HABILIDADES FISICAS DEL HOMBRE</h1>
         <label class="small mb-5" for="inputFirstName">Nombre: <?php echo $datos['nombre'] ?> </label><br>
@@ -10271,7 +10272,7 @@ where idevaluacion_aspirante = $id and d.tipo = 'C'");
             <tfoot>
                 <tr>
                     <td colspan="2"><strong>Total Flexibilidad</strong></td>
-                    <td><?php echo $flexibilidad[0]['total'] ?></td>
+                    <td><?php echo $total_flexibilida['puntos'];  ?></td>
                 </tr>
             </tfoot>
         </table>
@@ -10306,7 +10307,7 @@ where idevaluacion_aspirante = $id and d.tipo = 'C'");
             <tfoot>
             <tr>
                 <td colspan="2"><strong>Total Fuerza</strong></td>
-                <td><?php echo $fuerza[0]['total'] ?></td>
+                <td><?php echo $total_fuerza['puntos']; ?></td>
             </tr>
             </tfoot>
         </table>
@@ -10315,20 +10316,17 @@ where idevaluacion_aspirante = $id and d.tipo = 'C'");
 
             <tr>
                 <td><strong>Total Flexibilidad</strong></td>
-                <td><strong><?php echo $flexibilidad[0]['total'] ?></strong></td>
+                <td><strong><?php echo $total_flexibilida['puntos']; ?></strong></td>
             </tr>
             <tr>
                 <td><strong>Total Flexibilidad</strong></td>
-                <td><?php echo $fuerza[0]['total'] ?></td>
+                <td><?php echo $total_fuerza['puntos']; ?></td>
             </tr>
             <tr>
                 <td><strong>Total</strong></td>
-                <td><?php echo $flexibilidad[0]['total']+$fuerza[0]['total'] ?></td>
+                <td><?php echo $total_flexibilida['puntos']+$total_fuerza['puntos'] ?></td>
             </tr>
-            <tr>
-                <td><strong>Rango</strong></td>
-                <td><?php echo $datos['rango'] ?></td>
-            </tr>
+
         </table>
     </div>
 

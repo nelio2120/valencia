@@ -7,7 +7,7 @@ $datos = BDD::CONSULTAR("nivel","id_nivel,nombre,rango","id_nivel=$id");
 
 print Ambiente::ENCABEZADO();
 if($datos){
-    if(isset($_POST['boton_submit']))  classUsuario::UPDATE_USUARIO();
+    if(isset($_POST['boton_submit']))  classNivel::ACTUALIZAR_NIVEL();
 
 
 //Y ESTAS LAS ABREN (OBLIGATORIAS)

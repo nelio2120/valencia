@@ -8,7 +8,7 @@ $datos = BDD::QUERY("select id_estudiante,id_nivel,id_entrenador,club, concat(no
 
 print Ambiente::ENCABEZADO();
 if($datos){
-    if(isset($_POST['boton_submit']))  classUsuario::ELIMINAR_USUARIO();
+    if(isset($_POST['boton_submit']))  classEstudiante::ELIMINAR_ESTUDIANTE();
 
 //Y ESTAS LAS ABREN (OBLIGATORIAS)
     print Ambiente::ENCABEZADO();
@@ -18,7 +18,7 @@ if($datos){
     print FORM::FORMULARIO_USUARIO("POST","Eliminar estudiante","","#");
 //ASI SE GENERAN INPUTS
     print FORM::GENERAR_INPUT_USUARIO("id",$datos['id_estudiante'],"","hidden","");
-    print FORM::GENERAR_INPUT_USUARIO("club",$datos['club'],"Club","text","Club",true);
+    print FORM::GENERAR_INPUT_USUARIO("club",$datos['club'],"Club","text","Estas seguro de eliminar este estudiante?",true);
     print FORM::GENERAR_INPUT_USUARIO("Estudiante",$datos['nombres'],"","text","",true);
     print FORM::GENERAR_INPUT_USUARIO("id_entrenador",$datos['id_entrenador'],"","hidden","");
     print FORM::GENERAR_INPUT_USUARIO("id_nivel",$datos['id_nivel'],"","hidden","");

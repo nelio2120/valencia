@@ -7,7 +7,7 @@ $datos = BDD::CONSULTAR("estudiante","id_estudiante,id_persona,id_nivel,id_entre
 
 print Ambiente::ENCABEZADO();
 if($datos){
-    if(isset($_POST['boton_submit']))  classUsuario::UPDATE_USUARIO();
+    if(isset($_POST['boton_submit']))  classEstudiante::ACTUALIZAR_ESTUDIANTE();
 
 
 //Y ESTAS LAS ABREN (OBLIGATORIAS)
