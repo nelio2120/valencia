@@ -37,3 +37,59 @@ if($datos){
 }
 
 ?>
+
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+          $('#boton_submit').click(function(event) {
+                event.preventDefault();
+            usuario = $('#Usuario').val();
+            contra = $('#Clave').val();
+            confirmar = $('#Confirmar').val();
+
+                if (usuario==null
+                    || usuario==''
+                    || /\s/.test(usuario)
+                    || usuario.length==0){
+                    $('#Usuario').toggleClass('is-invalid');
+                    setTimeout(function(){
+                        $("#Usuario").removeClass('is-invalid');
+                    },3000);
+                    return;
+                }
+            
+                if (contra==null
+                    || contra==''
+                    || /\s/.test(contra)
+                    || contra.length==0){
+                    $('#Clave').toggleClass('is-invalid');
+                    setTimeout(function(){
+                        $("#Clave").removeClass('is-invalid');
+                    },3000);
+                    return;
+                }
+
+                if (confirmar==null
+                    || confirmar==''
+                    || /\s/.test(confirmar)
+                    || confirmar.length==0){
+                    $('#Confirmar').toggleClass('is-invalid');
+                    setTimeout(function(){
+                        $("#Confirmar").removeClass('is-invalid');
+                    },3000);
+                    return;
+                }
+
+                var formulario = document.getElementById('form_usuario');
+                formulario.submit();
+
+
+
+          });
+
+
+
+    });
+
+
+</script>

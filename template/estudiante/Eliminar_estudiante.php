@@ -2,7 +2,7 @@
 require '../../mod_seguridad/ambiente.php';
 $id = $_GET['id'];
 
-$datos = BDD::QUERY("SELECT id_estudiante,id_nivel,id_entrenador,club, concat(nombre,' ',apellido) as nombres 
+$datos = BDD::QUERY("select id_estudiante,id_nivel,id_entrenador,club, concat(nombre,' ',apellido) as nombres 
                     from estudiante,persona 
                     where persona.id_persona = estudiante.id_persona and id_estudiante = $id");
 
