@@ -12,7 +12,7 @@ print FORM::GENERAR_BUTTON_SUBMIT("Crear Entrenador");
 
 print FORM::CERRAR_FORMULARIO();
 print FORM::OBTENER_FOOTER_HTML();
-print Ambiente::OBTENER_LOS_SCRIPTS();S
+print Ambiente::OBTENER_LOS_SCRIPTS();
 print Ambiente::OBTENER_ETIQUETAS_HEAD();
 ?>
 
