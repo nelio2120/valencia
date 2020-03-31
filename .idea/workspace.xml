@@ -7,7 +7,8 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
@@ -33,6 +34,13 @@
         <option value="HTML File" />
       </list>
     </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/tecnickcom/tcpdf" />
+      <path value="$PROJECT_DIR$/vendor/spipu/html2pdf" />
+    </include_path>
   </component>
   <component name="ProjectId" id="1ZNNnVLhV2zL7Wj7BAp9lIfM2pC" />
   <component name="ProjectViewState">
@@ -87,6 +95,7 @@
       <updated>1584675759672</updated>
       <workItem from="1584675765344" duration="27939000" />
       <workItem from="1584828270709" duration="216152000" />
+      <workItem from="1585612838584" duration="2237000" />
     </task>
     <servers />
   </component>

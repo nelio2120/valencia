@@ -81,7 +81,6 @@ class Ambiente
                                 <div class=\"text-center mt-4\">
                                     <img class=\"mb-4 img-error\" src=\"../../startbootstrap-sb-admin-gh-pages/dist/assets/img/error-404-monochrome.svg\" />
                                     <p class=\"lead\">This requested URL was not found on this server.</p>
-                                    <a href=\"./index.php\"><i class=\"fas fa-arrow-left mr-1\"></i>Return to Dashboard</a>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +115,7 @@ class Ambiente
         $html .= "
     <div id=\"layoutSidenav_nav\">
          <nav class=\"sb-topnav navbar navbar-expand navbar-dark bg-dark\">
-                 <a class=\"navbar-brand\" href=\"index.html\">Gimnasia Deportiva</a>
+                 <a class=\"navbar-brand\" href=\"index.html\">Gimnasia Deportiva </a>
                     <button class=\"btn btn-link btn-sm order-1 order-lg-0\" id=\"sidebarToggle\" href=\"#\">
                         <i class=\"fas fa-bars\"></i>
                     </button><!-- Navbar Search-->
@@ -132,7 +131,7 @@ class Ambiente
                     <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"userDropdown\">
                         <a class=\"dropdown-item\" href=\"#\">Configuraciones</a>
                         <div class=\"dropdown-divider\"></div>
-                        <a class=\"dropdown-item\" href=\"login.html\">Cerrar Session</a>
+                        <a class=\"dropdown-item\" href=\"../login/login.php\">Cerrar Session</a>
                     </div>
                 </li>
             </ul>
@@ -177,7 +176,7 @@ class Ambiente
         $html = "";
         $html .= "
         <iframe id=\"iframe_principal\" class=\"\" 
-        src=\"../../startbootstrap-sb-admin-gh-pages/dist/login.html\" 
+        src=\"../usuario/\" 
         width=\"auto\" frameborder=\"0\" 
         style=\"width:100%; height: 100%;PADDING:0px;MARGIN:0px;\">IFRAME</iframe>
         ";
