@@ -129,7 +129,7 @@ class Ambiente
                         <i class=\"fas fa-user fa-fw\"></i>
                     </a>
                     <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"userDropdown\">
-                        <a class=\"dropdown-item\" href=\"#\">Configuraciones</a>
+                        <a class=\"dropdown-item\" onclick=\"src_iframe('../../template/usuario/Actualizar_usuario.php?id=".$_SESSION['id_usuario']."')\">Configuraciones</a>
                         <div class=\"dropdown-divider\"></div>
                         <a class=\"dropdown-item\" href=\"../login/login.php\">Cerrar Session</a>
                     </div>

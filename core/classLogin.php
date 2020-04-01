@@ -9,13 +9,14 @@ class Login
         $name_user = strtoupper($name_user);
         $pass = filter_input(INPUT_POST,"pass");
         $pass = trim($pass);
-        $consulta = BDD::CONSULTAR("usuario","clave","usuario ='$name_user' and estado = 'ACTIVO'");
+        $consulta = BDD::CONSULTAR("usuario","clave,id_usuario","usuario ='$name_user' and estado = 'ACTIVO'");
         if($consulta)
         {
             if($consulta['clave'] == $pass)
             {
                 session_start();
                 $_SESSION['usuario'] = $name_user;
+                $_SESSION['id_usuario'] = $consulta['id_usuario'];
                return print "<script>window.location='../menu/menu_desktop.php'</script>";
             }
             else

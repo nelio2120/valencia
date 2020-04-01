@@ -63,7 +63,7 @@ class Menu
                         
                     </div>
                     <div class=\"sb-sidenav-footer\">
-                        <div class=\"small\">Usuario Logeado en :</div>
+                        <div class=\"small\">Usuario Logeado : ".$_SESSION['usuario']." en </div>
                        Gimnasia Deportiva v1.0
                     </div>
                 </nav>
