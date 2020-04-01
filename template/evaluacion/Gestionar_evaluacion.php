@@ -59,7 +59,7 @@ print FORM::GENERAR_INPUT_USUARIO("tipo2","S","","hidden","");
 print FORM_MD::CERRAR_FOMULARIO_MD();
 print FORM_MD::CERRAR_FOMULARIO_MD();
 print "<br/>";
-print FORM::GENERAR_BUTTON_SUBMIT("Crear Usuario","boton_submit","btn btn-secondary btn-block","width:50%");
+print FORM::GENERAR_BUTTON_SUBMIT("Crear Evaluacion","boton_submit","btn btn-secondary btn-block","width:50%");
 print "<br/>";
 print $javascript;
 print "</form> ";
