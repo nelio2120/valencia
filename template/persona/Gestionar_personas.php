@@ -4,29 +4,8 @@ if (isset($_POST['boton_submit'])) classPersona::INSERTAR_PERSONA();
 
 print Ambiente::ENCABEZADO();
 print Ambiente::ABRIR_BODY('bg-primary');
-print FORM::FORMULARIO_USUARIO("POST","Crear Representante","","","form");
-print FORM::GENERAR_INPUT_USUARIO("Cedula","","Ingrese su cedula","text","Cedula");
-print FORM::GENERAR_INPUT_USUARIO("Nombre","","Ingrese su nombre","text","Nombre");
-print FORM::GENERAR_INPUT_USUARIO("Apellido","","Ingrese su apellido","text","Apellido");
-print FORM::GENERAR_INPUT_USUARIO("Telefono","","Ingrese su telefono","text","Telefono");
-print FORM::GENERAR_INPUT_USUARIO("Correo","","Ingrese su correo","Email","Correo");
-print FORM::GENERAR_INPUT_USUARIO("Direccion","","ingrese su direccion","text","Direccion");
-print FORM::GENERAR_INPUT_USUARIO("Ciudad","","Ciudad","text","Ciudad");
-print FORM::GENERAR_INPUT_USUARIO("Fecha_nacimiento","","Ciudad","date","Fecha de nacimiento");
-$array[] = array("id"=>"M","nombres"=>"Masculino");
-$array[] = array("id"=>"F","nombres"=>"Femenino");
-print FORM::GENERAR_SELECT($array,"sexo","Sexo");
-print FORM::GENERAR_INPUT_USUARIO("Provincia","","Provincia","text","Provincia");
-print FORM::GENERAR_BUTTON_SUBMIT("button","Crear Persona");
-print FORM::CERRAR_FORMULARIO();
-print FORM::OBTENER_FOOTER_HTML();
-print Ambiente::OBTENER_LOS_SCRIPTS();
-print Ambiente::SCRIPTS_VALIDATOS();
-print Ambiente::OBTENER_ETIQUETAS_HEAD();
-?>
-
-
-<script type="text/javascript">
+$javascript = "
+<script type=\"text/javascript\">
     
     $(document).ready(function() {
           $('#boton_submit').click(function(event) {
@@ -51,7 +30,7 @@ print Ambiente::OBTENER_ETIQUETAS_HEAD();
                     || cedula.length==0){
                     $('#Cedula').toggleClass('is-invalid');
                     setTimeout(function(){
-                        $("#Cedula").removeClass('is-invalid');
+                        $(\"#Cedula\").removeClass('is-invalid');
                     },3000);
                     return;
                 }
@@ -62,7 +41,7 @@ print Ambiente::OBTENER_ETIQUETAS_HEAD();
                     || nombre.length==0){
                     $('#Nombre').toggleClass('is-invalid');
                     setTimeout(function(){
-                        $("#Nombre").removeClass('is-invalid');
+                        $(\"#Nombre\").removeClass('is-invalid');
                     },3000);
                     return;
                 }
@@ -72,7 +51,7 @@ print Ambiente::OBTENER_ETIQUETAS_HEAD();
                     || apellido.length==0){
                     $('#Apellido').toggleClass('is-invalid');
                     setTimeout(function(){
-                        $("#Apellido").removeClass('is-invalid');
+                        $(\"#Apellido\").removeClass('is-invalid');
                     },3000);
                     return;
                 }
@@ -83,7 +62,7 @@ print Ambiente::OBTENER_ETIQUETAS_HEAD();
                     || telefono.length==0){
                     $('#Telefono').toggleClass('is-invalid');
                     setTimeout(function(){
-                        $("#Telefono").removeClass('is-invalid');
+                        $(\"#Telefono\").removeClass('is-invalid');
                     },3000);
                     return;
                 }
@@ -94,7 +73,7 @@ print Ambiente::OBTENER_ETIQUETAS_HEAD();
                     || telefono.length==0){
                     $('#Correo').toggleClass('is-invalid');
                     setTimeout(function(){
-                        $("#Correo").removeClass('is-invalid');
+                        $(\"#Correo\").removeClass('is-invalid');
                     },3000);
                     return;
                 }
@@ -104,7 +83,7 @@ print Ambiente::OBTENER_ETIQUETAS_HEAD();
                     || direccion.length==0){
                     $('#Direccion').toggleClass('is-invalid');
                     setTimeout(function(){
-                        $("#Direccion").removeClass('is-invalid');
+                        $(\"#Direccion\").removeClass('is-invalid');
                     },3000);
                     return;
                 }
@@ -114,7 +93,7 @@ print Ambiente::OBTENER_ETIQUETAS_HEAD();
                     || ciudad.length==0){
                     $('#Ciudad').toggleClass('is-invalid');
                     setTimeout(function(){
-                        $("#Ciudad").removeClass('is-invalid');
+                        $(\"#Ciudad\").removeClass('is-invalid');
                     },3000);
                     return;
                 }
@@ -125,7 +104,7 @@ print Ambiente::OBTENER_ETIQUETAS_HEAD();
                     || fecha.length==0){
                     $('#Fecha_nacimiento').toggleClass('is-invalid');
                     setTimeout(function(){
-                        $("#Fecha_nacimiento").removeClass('is-invalid');
+                        $(\"#Fecha_nacimiento\").removeClass('is-invalid');
                     },3000);
                     return;
                 }
@@ -135,7 +114,7 @@ print Ambiente::OBTENER_ETIQUETAS_HEAD();
                     || provincia.length==0){
                     $('#Provincia').toggleClass('is-invalid');
                     setTimeout(function(){
-                        $("#Provincia").removeClass('is-invalid');
+                        $(\"#Provincia\").removeClass('is-invalid');
                     },3000);
                     return;
                 }
@@ -156,4 +135,26 @@ print Ambiente::OBTENER_ETIQUETAS_HEAD();
     });
 
 
-</script>
+</script>";
+print FORM::FORMULARIO_USUARIO("POST","Crear Persona","","","form");
+print FORM::GENERAR_INPUT_USUARIO("cedula","","Ingrese su cedula","text","Cedula","","","Cedula");
+print FORM::GENERAR_INPUT_USUARIO("nombre","","Ingrese su nombre","text","Nombre","","","Nombre");
+print FORM::GENERAR_INPUT_USUARIO("apellido","","Ingrese su apellido","text","Apellido","","","Apellido");
+print FORM::GENERAR_INPUT_USUARIO("telefono","","Ingrese su telefono","text","Telefono","","","Telefono");
+print FORM::GENERAR_INPUT_USUARIO("correo","","Ingrese su correo","Email","Correo","","","Correo");
+print FORM::GENERAR_INPUT_USUARIO("direccion","","ingrese su direccion","text","Direccion","","","Direccion");
+print FORM::GENERAR_INPUT_USUARIO("ciudad","","Ciudad","text","Ciudad","","","Ciudad");
+print FORM::GENERAR_INPUT_USUARIO("fecha_nacimiento","","Ciudad","date","Fecha de nacimiento","","","Fecha_nacimiento");
+$array[] = array("id"=>"M","nombres"=>"Masculino");
+$array[] = array("id"=>"F","nombres"=>"Femenino");
+print FORM::GENERAR_SELECT($array,"sexo","Sexo");
+print FORM::GENERAR_INPUT_USUARIO("provincia","","Provincia","text","Provincia","","","Provincia");
+print FORM::GENERAR_BUTTON_SUBMIT("Crear Persona");
+print FORM::CERRAR_FORMULARIO();
+print FORM::OBTENER_FOOTER_HTML();
+print Ambiente::OBTENER_LOS_SCRIPTS();
+print Ambiente::SCRIPTS_VALIDATOS();
+print Ambiente::OBTENER_ETIQUETAS_HEAD();
+?>
+
+

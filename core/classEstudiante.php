@@ -1,6 +1,5 @@
 <?php
 
-
 class classEstudiante
 {
     static public function INSERTAR_ESTUDIANTE(){
@@ -11,9 +10,12 @@ class classEstudiante
         $name_club = trim($name_club);
         $name_club = strtoupper($name_club);
         $name_categoria = filter_input(INPUT_POST,"categoria");
-
-
-        $array = array("id_persona"=>$name_persona,"id_nivel"=>$name_nivel,"id_entrenador"=>$name_entrenado,"club"=>$name_club,"id_categoria"=>$name_categoria);
+        $array =
+            array("id_persona"=>$name_persona
+            ,"id_nivel"=>$name_nivel
+            ,"id_entrenador"=>$name_entrenado
+            ,"club"=>$name_club
+            ,"id_categoria"=>$name_categoria);
         if(BDD::INSERTAR_DESDE_ARRAY("estudiante",$array)) return print classUsuario::REDIRECCIONAR_ANTERIOR();
         else return print  print "<script>alert('Error al Insertar estudiante');</script>";
     }

@@ -4,8 +4,8 @@
 class classPersona
 {
     static public function INSERTAR_PERSONA(){
-        $name_cedula = filter_input(INPUT_POST,"Cedula");
-        $name_Nombre = filter_input(INPUT_POST,"Nombre");
+        $name_cedula = filter_input(INPUT_POST,"cedula");
+        $name_Nombre = filter_input(INPUT_POST,"nombre");
         $name_apellido = filter_input(INPUT_POST,"apellido");
         $name_telefono = filter_input(INPUT_POST,"telefono");
         $name_correo = filter_input(INPUT_POST,"correo");

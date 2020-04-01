@@ -43,7 +43,7 @@ class BDD
             }
         }
     }
-    static public function  QUERY($read)
+    static public function QUERY($read)
     {
         $mysql = self::CONECTAR();
         if (!$read)
