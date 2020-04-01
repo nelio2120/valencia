@@ -102,9 +102,6 @@ class BDD
         if ($res){
           return $id;
         }else{
-            echo "Erro en consulta: ".$mysql->errno ." \n";
-            echo "Error: " . $mysql->error . "\n";
-            echo "insert $q \n";
             return false;
         }
     }
