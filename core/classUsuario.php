@@ -11,7 +11,7 @@ class classUsuario
         $name_user = trim($name_user);
         $name_user = strtoupper($name_user);
         $name_clave = trim($name_clave);
-        $name_clave = strtoupper($name_clave);
+
         $name_Confirmar = trim($name_Confirmar);
         $name_Confirmar = strtoupper($name_Confirmar);
         $select = filter_input(INPUT_POST,"select");
@@ -33,7 +33,7 @@ class classUsuario
         $name_Confirmar = filter_input(INPUT_POST,"Confirmar");
         $name_user = trim($name_user);
         $name_user = strtoupper($name_user);
-        $name_clave = trim($name_clave);
+
         $name_clave = strtoupper($name_clave);
         $name_Confirmar = trim($name_Confirmar);
         $name_Confirmar = strtoupper($name_Confirmar);
@@ -52,7 +52,7 @@ class classUsuario
         $name_user = filter_input(INPUT_POST,"Usuario");
         $name_clave = filter_input(INPUT_POST,"Clave");
         $name_user = trim($name_user);
-        $name_user = strtoupper($name_user);
+   
         $name_clave = trim($name_clave);
         $name_clave = strtoupper($name_clave);
         $select = filter_input(INPUT_POST,"select");
