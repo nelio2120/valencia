@@ -36,6 +36,7 @@ class classEstudiante
         if(BDD::ACTUALIZAR_DESDE_ARRAY("estudiante",$array,"id_estudiante=$name_id")) return print classUsuario::REDIRECCIONAR_ANTERIOR();
         else return print  print "<script>alert('Error al Actualizar estudiante');</script>";
     }
+
     static public function ELIMINAR_ESTUDIANTE(){
         $name_id = filter_input(INPUT_POST,"id");
         if(BDD::ELIMINAR_DATOS("estudiante","id_estudiante=$name_id")) return print classUsuario::REDIRECCIONAR_ANTERIOR();

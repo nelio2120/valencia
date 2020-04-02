@@ -18,6 +18,7 @@ if(!isset($_SESSION['usuario'])) {
     require "../../core/classRepresentante.php";
     require "../../core/classEntrenador.php";
     require "../../core/classEstudiante.php";
+    require "../../core/classNivel.php";
 }
 
 

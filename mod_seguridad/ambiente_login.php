@@ -12,5 +12,5 @@ require "../../core/classPersona.php";
 require "../../core/classEvaluacion.php";
 require "../../core/classEjercicio.php";
 require "../../core/classRepresentante.php";
-
+require "../../core/classNivel.php";
 ?>

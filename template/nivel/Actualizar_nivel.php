@@ -8,38 +8,9 @@ $datos = BDD::CONSULTAR("nivel","id_nivel,nombre,rango","id_nivel=$id");
 print Ambiente::ENCABEZADO();
 if($datos){
     if(isset($_POST['boton_submit']))  classNivel::ACTUALIZAR_NIVEL();
+$javascript = "
 
-
-//Y ESTAS LAS ABREN (OBLIGATORIAS)
-    print Ambiente::ENCABEZADO();
-    print Ambiente::ABRIR_BODY('bg-primary');
-
-
-    print FORM::FORMULARIO_USUARIO("POST","Actualizar Nivel","return validar_usuario();","#");
-//ASI SE GENERAN INPUTS
-    print FORM::GENERAR_INPUT_USUARIO("id",$datos['id_nivel'],"","hidden","");
-
-    print FORM::GENERAR_INPUT_USUARIO("Nombre",$datos['nombre'],"Ingrese un nombre","text","Nombre");
-
-    print FORM::GENERAR_INPUT_USUARIO("Rango",$datos['rango'],"Ingrese un rango","text","Rango");
-
-//ASI SE GENERAN BUTTONS
-    print FORM::GENERAR_BUTTON_SUBMIT_ELIMINAR("Actualizar nivel");
-
-//ESTAS ETIQUETAS CIERRAN EL FORMULARIO  (OBLIGATORIAS)
-    print FORM::CERRAR_FORMULARIO();
-    print FORM::OBTENER_FOOTER_HTML();
-
-    print Ambiente::OBTENER_LOS_SCRIPTS();
-    print Ambiente::SCRIPTS_VALIDATOS();
-}else{
-   print Ambiente::PAGINA_404();
-}
-
-?>
-
-
-<script type="text/javascript"> 
+<script type=\"text/javascript\"> 
     $(document).ready(function() {
           $('#boton_submit').click(function(event) {
             event.preventDefault();
@@ -52,7 +23,7 @@ if($datos){
                     || nombre.length==0){
                     $('#Nombre').toggleClass('is-invalid');
                     setTimeout(function(){
-                        $("#Nombre").removeClass('is-invalid');
+                        $(\"#Nombre\").removeClass('is-invalid');
                     },3000);
                     return;}
 
@@ -63,7 +34,7 @@ if($datos){
                     || rango.length==0){
                     $('#Rango').toggleClass('is-invalid');
                     setTimeout(function(){
-                        $("#Rango").removeClass('is-invalid');
+                        $(\"#Rango\").removeClass('is-invalid');
                     },3000);
                     return;
                 }
@@ -78,4 +49,34 @@ if($datos){
     });
 
 
-</script>
+</script>        
+";
+
+//Y ESTAS LAS ABREN (OBLIGATORIAS)
+    print Ambiente::ENCABEZADO();
+    print Ambiente::ABRIR_BODY('bg-primary');
+
+
+    print FORM::FORMULARIO_USUARIO("POST","Actualizar Nivel","return validar_usuario();","#");
+//ASI SE GENERAN INPUTS
+    print FORM::GENERAR_INPUT_USUARIO("id",$datos['id_nivel'],"","hidden","");
+
+    print FORM::GENERAR_INPUT_USUARIO("nombre",$datos['nombre'],"Ingrese un nombre","text","Nombre","","","Nombre");
+
+    print FORM::GENERAR_INPUT_USUARIO("rango",$datos['rango'],"Ingrese un rango","text","Rango","","","Rango");
+
+//ASI SE GENERAN BUTTONS
+    print FORM::GENERAR_BUTTON_SUBMIT_ELIMINAR("Actualizar nivel");
+    print $javascript;
+//ESTAS ETIQUETAS CIERRAN EL FORMULARIO  (OBLIGATORIAS)
+    print FORM::CERRAR_FORMULARIO();
+    print FORM::OBTENER_FOOTER_HTML();
+
+    print Ambiente::OBTENER_LOS_SCRIPTS();
+    print Ambiente::SCRIPTS_VALIDATOS();
+}else{
+   print Ambiente::PAGINA_404();
+}
+
+?>
+
