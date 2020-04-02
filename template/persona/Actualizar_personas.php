@@ -7,6 +7,40 @@ $datos = BDD::CONSULTAR("persona","id_persona,nombre,apellido,cedula,telefono,ci
 print Ambiente::ENCABEZADO();
 if($datos){
     if(isset($_POST['boton_submit']))  classPersona::ACTUALIZAR_PERSONA();
+    $javascript1 = "<script> var input = document.getElementById('Cedula');
+if(input){
+    input.addEventListener('input',function(){
+    if (this.value.length > 12)
+        this.value = this.value.slice(0,12);
+}) ;
+}else{
+    console.log('es nulo');
+}
+function validaNumericos(event) {
+    if(event.charCode >= 48 && event.charCode <= 57){
+      return true;
+     }
+     return false;        
+}
+    function soloLetras(e) {
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = \" áéíóúabcdefghijklmnñopqrstuvwxyz\";
+    especiales = [8, 37, 39, 46];
+
+    tecla_especial = false
+    for(var i in especiales) {
+        if(key == especiales[i]) {
+            tecla_especial = true;
+            break;
+        }
+    }
+
+    if(letras.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+}
+
+</script>";
 
 
 //Y ESTAS LAS ABREN (OBLIGATORIAS)
@@ -17,10 +51,11 @@ if($datos){
     print FORM::FORMULARIO_USUARIO("POST","Actualizar persona","return validar_usuario();","#");
 //ASI SE GENERAN INPUTS
     print FORM::GENERAR_INPUT_USUARIO("id",$datos['id_persona'],"","hidden","");
-    print FORM::GENERAR_INPUT_USUARIO("cedula",$datos['cedula'],"Ingrese su cedula","text","Cedula","","","Cedula");
-    print FORM::GENERAR_INPUT_USUARIO("nombre",$datos['nombre'],"Ingrese su nombre","text","Nombre","","","Nombre");
+    print FORM::GENERAR_INPUT_USUARIO("cedula",$datos['cedula'],"Ingrese su cedula","text","Cedula","","onkeypress='return validaNumericos(event)'","Cedula");
+    print $javascript1;
+    print FORM::GENERAR_INPUT_USUARIO("nombre",$datos['nombre'],"Ingrese su nombre","text","Nombre","","onkeypress=\"return soloLetras(event)\"","Nombre");
 
-    print FORM::GENERAR_INPUT_USUARIO("apellido",$datos['apellido'],"Ingrese su apellido","text","Apellido","","","Apellido");
+    print FORM::GENERAR_INPUT_USUARIO("apellido",$datos['apellido'],"Ingrese su apellido","text","Apellido","","onkeypress=\"return soloLetras(event)\"","Apellido");
 
 
     print FORM::GENERAR_INPUT_USUARIO("telefono",$datos['telefono'],"Ingrese su telefono","text","Telefono","","","Telefono");
@@ -29,11 +64,11 @@ if($datos){
     print FORM::GENERAR_INPUT_USUARIO("correo",$datos['correo'],"Ingrese su correo","email","Correo","","","Correo");
 
 
-    print FORM::GENERAR_INPUT_USUARIO("ciudad",$datos['ciudad'],"Ingrese su ciudad","text","ciudad","","","Ciudad");
+    print FORM::GENERAR_INPUT_USUARIO("ciudad",$datos['ciudad'],"Ingrese su ciudad","text","ciudad","","onkeypress=\"return soloLetras(event)\"","Ciudad");
 
     print FORM::GENERAR_INPUT_USUARIO("fecha_nacimiento",$datos['fecha_nacimiento'],"Ingrese su fecha de nacimiento","text","Fecha de nacimiento","","","Fecha");
 
-    print FORM::GENERAR_INPUT_USUARIO("provincia",$datos['provincia'],"Ingrese su provincia","text","Provincia","","","Provincia");
+    print FORM::GENERAR_INPUT_USUARIO("provincia",$datos['provincia'],"Ingrese su provincia","text","Provincia","","onkeypress=\"return soloLetras(event)\"","Provincia");
 
 
 //ASI SE GENERAN BUTTONS

@@ -135,20 +135,62 @@ $javascript = "
     });
 
 
+</script>
+";
+$javascript1 = "<script> var input = document.getElementById('Cedula');
+if(input){
+    input.addEventListener('input',function(){
+    if (this.value.length > 12)
+        this.value = this.value.slice(0,12);
+}) ;
+}else{
+    console.log('es nulo');
+}
+function validaNumericos(event) {
+    if(event.charCode >= 48 && event.charCode <= 57){
+      return true;
+     }
+     return false;        
+}
+function validaNumericos(event) {
+    if(event.charCode >= 48 && event.charCode <= 57){
+      return true;
+     }
+     return false;        
+}
+    function soloLetras(e) {
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = \" áéíóúabcdefghijklmnñopqrstuvwxyz\";
+    especiales = [8, 37, 39, 46];
+
+    tecla_especial = false
+    for(var i in especiales) {
+        if(key == especiales[i]) {
+            tecla_especial = true;
+            break;
+        }
+    }
+
+    if(letras.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+}
 </script>";
+
 print FORM::FORMULARIO_USUARIO("POST","Crear Persona","","","form");
-print FORM::GENERAR_INPUT_USUARIO("cedula","","Ingrese su cedula","text","Cedula","","","Cedula");
-print FORM::GENERAR_INPUT_USUARIO("nombre","","Ingrese su nombre","text","Nombre","","","Nombre");
-print FORM::GENERAR_INPUT_USUARIO("apellido","","Ingrese su apellido","text","Apellido","","","Apellido");
+print FORM::GENERAR_INPUT_USUARIO("cedula","","Ingrese su cedula","text","Cedula","","onkeypress='return validaNumericos(event)'","Cedula");
+print FORM::GENERAR_INPUT_USUARIO("nombre","","Ingrese su nombre","text","Nombre","","onkeypress=\"return soloLetras(event)\"","Nombre");
+print $javascript1;
+print FORM::GENERAR_INPUT_USUARIO("apellido","","Ingrese su apellido","text","Apellido","","onkeypress=\"return soloLetras(event)\"","Apellido");
 print FORM::GENERAR_INPUT_USUARIO("telefono","","Ingrese su telefono","text","Telefono","","","Telefono");
 print FORM::GENERAR_INPUT_USUARIO("correo","","Ingrese su correo","Email","Correo","","","Correo");
-print FORM::GENERAR_INPUT_USUARIO("direccion","","ingrese su direccion","text","Direccion","","","Direccion");
-print FORM::GENERAR_INPUT_USUARIO("ciudad","","Ciudad","text","Ciudad","","","Ciudad");
+print FORM::GENERAR_INPUT_USUARIO("direccion","","ingrese su direccion","text","Direccion","","onkeypress=\"return soloLetras(event)\"","Direccion");
+print FORM::GENERAR_INPUT_USUARIO("ciudad","","Ciudad","text","Ciudad","","onkeypress=\"return soloLetras(event)\"","Ciudad");
 print FORM::GENERAR_INPUT_USUARIO("fecha_nacimiento","","Ciudad","date","Fecha de nacimiento","","","Fecha_nacimiento");
 $array[] = array("id"=>"M","nombres"=>"Masculino");
 $array[] = array("id"=>"F","nombres"=>"Femenino");
 print FORM::GENERAR_SELECT($array,"sexo","Sexo");
-print FORM::GENERAR_INPUT_USUARIO("provincia","","Provincia","text","Provincia","","","Provincia");
+print FORM::GENERAR_INPUT_USUARIO("provincia","","Provincia","text","Provincia","","onkeypress=\"return soloLetras(event)\"","Provincia");
 print FORM::GENERAR_BUTTON_SUBMIT("Crear Persona");
 print FORM::CERRAR_FORMULARIO();
 print FORM::OBTENER_FOOTER_HTML();

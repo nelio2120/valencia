@@ -102,6 +102,45 @@ $javascript = "
 	});
 </script>
 ";
+$javascript1 = "<script> var input = document.getElementById('Cedula');
+if(input){
+    input.addEventListener('input',function(){
+    if (this.value.length > 12)
+        this.value = this.value.slice(0,12);
+}) ;
+}else{
+    console.log('es nulo');
+}
+function validaNumericos(event) {
+    if(event.charCode >= 48 && event.charCode <= 57){
+      return true;
+     }
+     return false;        
+}
+function validaNumericos(event) {
+    if(event.charCode >= 48 && event.charCode <= 57){
+      return true;
+     }
+     return false;        
+}
+    function soloLetras(e) {
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = \" áéíóúabcdefghijklmnñopqrstuvwxyz\";
+    especiales = [8, 37, 39, 46];
+
+    tecla_especial = false
+    for(var i in especiales) {
+        if(key == especiales[i]) {
+            tecla_especial = true;
+            break;
+        }
+    }
+
+    if(letras.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+}
+</script>";
 if($datos){
     if(isset($_POST['boton_submit']))  classRepresentante::ACTUALIZAR_REPRESENTANTE();
 //Y ESTAS LAS ABREN (OBLIGATORIAS)
@@ -112,14 +151,15 @@ if($datos){
     print FORM::FORMULARIO_USUARIO("POST","Actualizar representante","return validar_usuario();","#");
 //ASI SE GENERAN INPUTS
     print FORM::GENERAR_INPUT_USUARIO("id",$datos['idRepresentante'],"","hidden","");
-    print FORM::GENERAR_INPUT_USUARIO("cedula",$datos['Cedula'],"Ingrese su cedula","text","Cedula");
-    print FORM::GENERAR_INPUT_USUARIO("nombre",$datos['Nombre'],"Ingrese su nombre","text","Nombre");
-    print FORM::GENERAR_INPUT_USUARIO("apellido",$datos['Apellido'],"Ingrese su apellido","text","Apellido");
+    print FORM::GENERAR_INPUT_USUARIO("cedula",$datos['Cedula'],"Ingrese su cedula","text","Cedula","","onkeypress='return validaNumericos(event)'","Cedula");
+    print $javascript1;
+    print FORM::GENERAR_INPUT_USUARIO("nombre",$datos['Nombre'],"Ingrese su nombre","text","Nombre","","onkeypress=\"return soloLetras(event)\"");
+    print FORM::GENERAR_INPUT_USUARIO("apellido",$datos['Apellido'],"Ingrese su apellido","text","Apellido","","onkeypress=\"return soloLetras(event)\"");
     print FORM::GENERAR_INPUT_USUARIO("telefono",$datos['Telefono'],"Ingrese su telefono","text","Telefono");
     print FORM::GENERAR_INPUT_USUARIO("correo",$datos['correo'],"Ingrese su correo","Email","Correo");
-    print FORM::GENERAR_INPUT_USUARIO("direccion",$datos['direccion'],"ingrese su direccion","text","Direccion");
+    print FORM::GENERAR_INPUT_USUARIO("direccion",$datos['direccion'],"ingrese su direccion","text","Direccion","","onkeypress=\"return soloLetras(event)\"");
     print FORM::GENERAR_INPUT_USUARIO("fecha_nacimiento",$datos['fecha_nacimiento'],"Ciudad","date","Fecha de Nacimiento");
-    print FORM::GENERAR_INPUT_USUARIO("sector",$datos['sector'],"Ingrese el sector","text","Sector");
+    print FORM::GENERAR_INPUT_USUARIO("sector",$datos['sector'],"Ingrese el sector","text","Sector","","onkeypress=\"return soloLetras(event)\"");
     $array = BDD::QUERY("select id_estudiante as id , concat(nombre,' ',apellido)as nombres from estudiante 
 inner join persona on persona.id_persona = estudiante.id_persona;");
     print FORM::GENERAR_SELECT($array,"estudiante","Estudiante",$datos['id_estudiante']);
