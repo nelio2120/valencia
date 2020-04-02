@@ -25,10 +25,15 @@ class classEstudiante
         $name_nivel = filter_input(INPUT_POST,"nivel");
         $name_entrenado = filter_input(INPUT_POST,"entrenador");
         $name_club = filter_input(INPUT_POST,"club");
+        $name_categoria = filter_input(INPUT_POST,"categoria");
         $name_club = trim($name_club);
         $name_club = strtoupper($name_club);
-        $array = array("id_persona"=>$name_persona,"id_nivel"=>$name_nivel,"id_entrenador"=>$name_entrenado,"club"=>$name_club,"id_categoria"=>"");
-        if(BDD::ACTUALIZAR_DESDE_ARRAY("estudiante",$array,"id_entrenador=$name_id")) return print classUsuario::REDIRECCIONAR_ANTERIOR();
+        $array = array("id_persona"=>$name_persona
+        ,"id_nivel"=>$name_nivel
+        ,"id_entrenador"=>$name_entrenado
+        ,"club"=>$name_club
+        ,"id_categoria"=>$name_categoria);
+        if(BDD::ACTUALIZAR_DESDE_ARRAY("estudiante",$array,"id_estudiante=$name_id")) return print classUsuario::REDIRECCIONAR_ANTERIOR();
         else return print  print "<script>alert('Error al Actualizar estudiante');</script>";
     }
     static public function ELIMINAR_ESTUDIANTE(){

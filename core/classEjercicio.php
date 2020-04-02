@@ -7,7 +7,7 @@ class classEjercicio
         $name_nivel = filter_input(INPUT_POST,"nivel");
         $name_nombre = filter_input(INPUT_POST,"nombre");
         $name_descripcion = filter_input(INPUT_POST,"descripcion");
-        $name_image = addslashes(file_get_contents( $_FILES['imagen']['tmp_name']));
+        $name_image = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
         $name_nivel = trim($name_nivel);
         $name_nombre = trim($name_nombre);
         $name_descripcion = trim($name_descripcion);

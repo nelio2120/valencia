@@ -63,6 +63,7 @@ class BDD
                 $regs = array();
                 return $regs;
             }else{
+                //echo $read;
                 $regs = array();
                 while($row = $res->fetch_assoc())
                 {
@@ -138,6 +139,7 @@ class BDD
         $q = "UPDATE $tabla SET $strFlds $w";
         $res = mysqli_query($mysql,$q);
         if ($res){
+            //echo $q;
             return true;
         }else{
             echo "Erro en consulta: ".$mysql->errno ." \n";

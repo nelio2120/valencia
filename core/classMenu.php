@@ -35,6 +35,7 @@ class Menu
                                             <a class=\"nav-link\" onclick=\"src_iframe('../../template/categoria/');\">Generar Categoria</a>
                                             <a class=\"nav-link\" onclick=\"src_iframe('../../template/nivel/');\">Generar Nivel</a>
                                             <a class=\"nav-link\" onclick=\"src_iframe('../../template/representante/');\">Generar Representante</a>
+                                            <a class=\"nav-link\" onclick=\"src_iframe('../../template/estudiante/');\">Generar Estudiante</a>                                         
                                          </nav>
                                     </div>
                                 </nav>
