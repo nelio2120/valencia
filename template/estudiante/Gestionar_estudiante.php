@@ -17,7 +17,7 @@ inner join persona on entrenador.id_persona = persona.id_persona");
 print FORM::GENERAR_SELECT($array3,"entrenador","Entrenador");
 print FORM::GENERAR_INPUT_USUARIO("club","","Ingrese el club","text","CLUB:");
 $array4 = BDD::QUERY("select idcategoria as id , descripcion as nombres from categoria");
-print FORM::GENERAR_SELECT($array3,"categoria","Categoria");
+print FORM::GENERAR_SELECT($array4,"categoria","Categoria");
 
 print FORM::GENERAR_BUTTON_SUBMIT("Crear Entrenador");
 
