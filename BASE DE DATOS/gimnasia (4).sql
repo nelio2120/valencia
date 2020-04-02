@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-04-2020 a las 16:30:58
+-- Tiempo de generación: 02-04-2020 a las 20:10:28
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 5.6.40
 
@@ -390,6 +390,7 @@ ALTER TABLE `persona`
 ALTER TABLE `representante`
   ADD PRIMARY KEY (`idRepresentante`),
   ADD UNIQUE KEY `Cedula_UNIQUE` (`Cedula`),
+  ADD UNIQUE KEY `id_estudiante_UNIQUE` (`id_estudiante`),
   ADD KEY `fk_estudiante_representante_idx` (`id_estudiante`);
 
 --
