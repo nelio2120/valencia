@@ -9,7 +9,50 @@ print Ambiente::ENCABEZADO();
 if($datos){
     if(isset($_POST['boton_submit'])) classEjercicio::ACTUALIZAR_EJERCICIO();
 
+$javascript = "
+<script type=\"text/javascript\">
+    
+    $(document).ready(function() {
+          $('#boton_submit').click(function(event) {
+            event.preventDefault();
+            
+            var_1 = $('#Nombre').val();
+            var_2 = $('#Descripcion').val();
+            
 
+                if (var_1==null
+                    || var_1==''
+                    || var_1.length==0){
+                    $('#Nombre').toggleClass('is-invalid');
+                    setTimeout(function(){
+                        $(\"#Nombre\").removeClass('is-invalid');
+                    },3000);
+                    return;
+                }
+
+        
+
+                if (var_2==null
+                    || var_2==''
+                    || var_2.length==0){
+                    $('#Descripcion').toggleClass('is-invalid');
+                    setTimeout(function(){
+                        $(\"#Descripcion\").removeClass('is-invalid');
+                    },3000);
+                    return;
+                }
+
+                
+                var formulario = document.getElementById('form');
+                formulario.submit();
+          });
+
+
+
+    });
+
+
+</script>";
 //Y ESTAS LAS ABREN (OBLIGATORIAS)
     print Ambiente::ENCABEZADO();
     print Ambiente::ABRIR_BODY('bg-primary');
@@ -24,13 +67,13 @@ if($datos){
 
     print FORM::GENERAR_INPUT_USUARIO("descripcion",$datos['descripcion'],"Ingrese la descripcion del ejercicio","text","Descripcion");
 
-    print FORM::GENERAR_INPUT_USUARIO("image",$datos['imagen'],"Ingrese el nombre del ejercicio","hidden","Imagen del ejercicio");
+    print FORM::GENERAR_INPUT_USUARIO("imagen","","Ingrese el nombre del ejercicio","file","Imagen del ejercicio");
 
     
 
 //ASI SE GENERAN BUTTONS
     print FORM::GENERAR_BUTTON_SUBMIT_ELIMINAR("Actualizar ejercicio");
-
+    print $javascript;
 //ESTAS ETIQUETAS CIERRAN EL FORMULARIO  (OBLIGATORIAS)
     print FORM::CERRAR_FORMULARIO();
     print FORM::OBTENER_FOOTER_HTML();
@@ -42,57 +85,3 @@ if($datos){
 }
 
 ?>
-
-<script type="text/javascript">
-    
-    $(document).ready(function() {
-          $('#boton_submit').click(function(event) {
-            event.preventDefault();
-            
-            var_1 = $('#Nombre').val();
-            var_2 = $('#Descripcion').val();
-            var_3 = $('#Imagen').val();
-
-                if (var_1==null
-                    || var_1==''
-                    || var_1.length==0){
-                    $('#Nombre').toggleClass('is-invalid');
-                    setTimeout(function(){
-                        $("#Nombre").removeClass('is-invalid');
-                    },3000);
-                    return;
-                }
-
-        
-
-                if (var_2==null
-                    || var_2==''
-                    || var_2.length==0){
-                    $('#Descripcion').toggleClass('is-invalid');
-                    setTimeout(function(){
-                        $("#Descripcion").removeClass('is-invalid');
-                    },3000);
-                    return;
-                }
-
-                if (var_3==null
-                    || var_3==''
-                    || var_3.length==0){
-                    $('#Imagen').toggleClass('is-invalid');
-                    setTimeout(function(){
-                        $("#Imagen").removeClass('is-invalid');
-                    },3000);
-                    return;
-                }
-
-
-                var formulario = document.getElementById('form');
-                formulario.submit();
-          });
-
-
-
-    });
-
-
-</script>

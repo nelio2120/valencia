@@ -82,6 +82,12 @@ class DATATABLE{
                     $data.= "<td><a href='./Eliminar_$href.php?id=$valor' class='btn'><i class=\"fas fa-window-close\"></i></a></a></td>";
                     continue;
                 }
+                if(substr($atributo,0,4)=="imag"){
+                    $ima = base64_encode($valor);
+                    print "<script> console.log('$ima')</script>";
+                    $data.="<td><img height='30%' width='40%' src='data:image/jpg;base64,".$ima."' alt='ejercicio'></td>";
+                    continue;
+                }
                 $data .= "<td>$valor</td>";
 
             }

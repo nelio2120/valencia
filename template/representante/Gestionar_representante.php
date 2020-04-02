@@ -101,7 +101,7 @@ $javascript = "
 ";
 print Ambiente::ENCABEZADO();
 print Ambiente::ABRIR_BODY('bg-primary');
-print FORM::FORMULARIO_USUARIO("POST","Crear Persona");
+print FORM::FORMULARIO_USUARIO("POST","Crear Representante");
 print FORM::GENERAR_INPUT_USUARIO("cedula","","Ingrese su cedula","text","Cedula");
 print FORM::GENERAR_INPUT_USUARIO("nombre","","Ingrese su nombre","text","Nombre");
 print FORM::GENERAR_INPUT_USUARIO("apellido","","Ingrese su apellido","text","Apellido");
@@ -113,7 +113,7 @@ print FORM::GENERAR_INPUT_USUARIO("sector","","Ingrese el sector","text","Sector
 $array = BDD::QUERY("select id_estudiante as id , concat(nombre,' ',apellido)as nombres from estudiante 
 inner join persona on persona.id_persona = estudiante.id_persona;");
 print FORM::GENERAR_SELECT($array,"estudiante","Estudiante");
-print FORM::GENERAR_BUTTON_SUBMIT("Crear Persona");
+print FORM::GENERAR_BUTTON_SUBMIT("Crear Representante");
 print $javascript;
 print FORM::CERRAR_FORMULARIO();
 print FORM::OBTENER_FOOTER_HTML();

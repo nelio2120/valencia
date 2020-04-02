@@ -23,7 +23,7 @@ class FORM {
     static public function CREAR_FORMULARIO_CARD($method,$titulo,$onsubmit,$action,$noForm = "")
     {
         $html = "";
-        if(!$noForm) $form = "<form method=\"$method\" $onsubmit $action> ";
+        if(!$noForm) $form = "<form method=\"$method\" $onsubmit $action enctype='multipart/form-data'> ";
         $html .= "
                  <div class=\"card-header\">
                     <h3 class=\"text-center font-weight-light my-4\">$titulo</h3>

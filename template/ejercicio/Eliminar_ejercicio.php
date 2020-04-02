@@ -12,9 +12,9 @@ if($datos){
 
     print FORM::FORMULARIO_USUARIO("POST","Actualizar ejercicio","return validar_usuario();","#");
     print FORM::GENERAR_INPUT_USUARIO("id",$datos['id_ejercicio'],"","hidden","");
-    print FORM::GENERAR_INPUT_USUARIO("nombre",$datos['nombre'],"Ingrese el nombre del ejercicio","text","ESTAS SEGURO DE ELIMINAR?");
+    print FORM::GENERAR_INPUT_USUARIO("nombre",$datos['nombre'],"Ingrese el nombre del ejercicio","text","ESTAS SEGURO DE ELIMINAR?",true);
 
-    print FORM::GENERAR_BUTTON_SUBMIT_ELIMINAR("Actualizar ejercicio");
+    print FORM::GENERAR_BUTTON_SUBMIT_ELIMINAR("Eliminar ejercicio");
     print FORM::CERRAR_FORMULARIO();
     print FORM::OBTENER_FOOTER_HTML();
 
